@@ -61,7 +61,10 @@ window.onload = function() {
                 let allText = txtFile.responseText;
                 let lines = txtFile.responseText.split("\n")
                 console.log(allText);
-                temp.innerHTML = lines;
+                for (i = 0; i < lines.length; i++) {
+                    temp.innerHTML += lines[i] + "\n";
+                }
+                //temp.innerHTML = lines;
             }
         }
     }
