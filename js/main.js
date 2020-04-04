@@ -54,7 +54,7 @@ let temp = document.getElementById('Temp');
 
 window.onload = function() {
     let txtFile = new XMLHttpRequest();
-    // txtFile.open("GET", "https://tempsiteforzin.netlify.com/BlogPosts/TestDoc.txt", true);
+    txtFile.open("GET", "https://tempsiteforzin.netlify.com/BlogPosts/TestDoc.txt", true);
     txtFile.onreadystatechange = function() {
         if (txtFile.readyState === 4) {
             if (txtFile.status === 200 || txtFile.status == 0) {
