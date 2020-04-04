@@ -49,6 +49,8 @@ window.onscroll = function() {
     }
 }
 
+let blogContainer = document.getElementById('BlogContainer');
+
 blogContainer.addEventListener("wheel", function() {
     event.preventDefault();
     blogContainer.scrollLeft += event.deltaY;
