@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            --backgroundA: #46e6cb;
+            --backgroundB: #40cab3;
+            --textA: #353535;
+            --textB: #dfdfdf;
+            --fontA: 'Montserrat', sans-serif;
+            --fontB: 'Ubuntu', sans-serif;
+        }
+        #BlogContainer {
+            flex-direction: row;
+            display: flex;
+            grid-template-rows: 470px;
+            grid-gap: 20px;
+            padding: 20px;
+            height: 80vh;
+            background-color: rgba(0, 0, 0, 0.3);
+            overflow-y: hidden;
+            overflow-x: scroll;
+            scroll-behavior: auto;
+        }
+
+        .blogPost {
+            height: 70vh;
+            flex: 0 0 40%;
+            margin: auto 20px;
+            border-radius: 50px;
+            background: var(--backgroundA);
+        }
+
+        .blogPost div {
+            width: 100%;
+            margin: 0;
+            height: 7vh;
+            background: var(--textA);
+            border-radius: 40px 40px 0 0;
+            color: var(--backgroundA);
+        }
+
+        .content {
+            margin: 2em;
+        }
+
+        .blogName {
+            font-size: 1.4em;
+            position: relative;
+            left: 40px;
+            top: 20px;
+            color: var(--backgroundA);
+            margin: 0;
+            font-weight: bold
+        }
+
+        .blogDate {
+            position: relative;
+            font-size: 1.4em;
+            top: -5px;
+            left: 80%;
+            margin: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div id='BlogContainer'>
+        <div class='blogPost'>
+            <div><p class='blogName'>Title Bar</p><p class='blogDate'>04/04/2020</p></div>
+            <p class='content'> Nunc in erat ut purus venenatis porta. Vestibulum commodo ut erat maximus mattis. Maecenas vel justo sed nibh aliquam viverra ut vestibulum arcu. Etiam pulvinar malesuada nunc aliquam ornare. Fusce cursus tortor velit, ac aliquam elit congue auctor. Suspendisse diam ex, commodo ut augue lacinia, finibus egestas sapien. Suspendisse viverra ligula nulla, nec blandit quam egestas eu. Cras condimentum enim vel mauris lobortis, in molestie mi tristique. Suspendisse in tellus ut dui lacinia ultricies vitae non nunc. Praesent pulvinar mi aliquam, tempor erat id, elementum ante. Mauris iaculis vitae nulla a aliquam. Sed aliquet risus quis turpis commodo consequat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src='js/blog.js'></script>
+    <!-- <script>
+        let blog = document.getElementById('BlogContainer');
+        blogList = new Array();
+
+        $.ajax({
+            url: "/BlogPosts",
+            success: function(data){
+                $(data).find("a:contains(.txt)").each(function(){
+                    // will loop through 
+                    var images = $(this).attr("href");
+
+                    blogList.push(images)
+                    GetFile(images);
+                    //$('<p></p>').html(images).appendTo(box)
+                });
+            }
+        });
+        console.log(blogList);
+
+        function GetFile(fileName) {
+            let txtFile = new XMLHttpRequest();
+            txtFile.open("GET", "http://localhost:8000/BlogPosts/" + fileName, true);
+            txtFile.onreadystatechange = function() {
+                if (txtFile.readyState === 4) {
+                    if (txtFile.status === 200 || txtFile.status == 0) {
+                        let allText = txtFile.responseText;
+                        let lines = txtFile.responseText.split("\n")
+                        makePost(fileName, lines);
+                    }
+                }
+            }
+            txtFile.send(null);
+        }
+        
+        function makePost(fileName, text) {
+            let post = document.createElement('DIV');
+            let topBar = document.createElement('DIV');
+            let title = document.createElement('P');
+            let date = document.createElement('P');
+            let content = document.createElement('P');
+
+            for (i = 0; i < text.length; i++) {
+                if (i == 0) title.innerHTML = text[i];
+                else if (i == 1) date.innerHTML = text[i];
+                else content.innerHTML += text[i] + "<br />";
+            }
+            title.classList.add('blogName');
+            topBar.appendChild(title);
+            date.classList.add('blogDate');
+            topBar.appendChild(date);
+
+            post.appendChild(topBar);
+            content.classList.add('content');
+            post.appendChild(content);
+
+            post.classList.add('blogPost');
+            blog.appendChild(post);
+        }
+    </script> -->
+</body>
+</html>
