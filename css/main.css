@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Ubuntu&display=swap');
+
+* {
+    /*border: 1px solid darkolivegreen;*/
+    scroll-behavior: smooth;
+}
+
+:root {
+    --backgroundA: #46e6cb;
+    --backgroundB: #40cab3;
+    --textA: #353535;
+    --textB: #dfdfdf;
+    --fontA: 'Montserrat', sans-serif;
+    --fontB: 'Ubuntu', sans-serif;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+#Lbd {
+    border-radius: 0 0 0 50px;
+}
+
+#Rbd {
+    border-radius: 0 0 50px 0;
+}
+
+#NavBar {
+    position: fixed;
+    left: 25%;
+    /* background-color: var(--backgroundA); */
+    display: table;
+    width: 50%;
+    margin: auto;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 80px;
+    border-radius: 0 0 50px 50px;
+    z-index: 3;
+    transition: 0.4s;
+}
+
+#NavBar a {
+    display: table-cell;
+    vertical-align: middle;
+    flex: 0 1 20%;
+    text-align: center;
+    font-family: var(--fontA);
+    font-size: 1.4em;
+    background-color: var(--backgroundA);
+    /* padding: 15px 0; */
+    color: var(--textA);
+    text-decoration: none;
+    transition-duration: 0.3s;
+    z-index: 2;
+}
+
+#NavBar a:hover {
+    background-color: var(--backgroundB);
+}
+
+#NavBar a.active {
+    color: var(--backgroundB);
+    background-color: var(--textA);
+}
+
+#PartOne {
+    height: 100vh;
+    background-image: url('../img/Background/Part1.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#PartTwo {
+    background-image: url('../img/Background/Part2.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: auto;
+}
+
+#PartThree {
+    background-image: url('../img/Background/Part3.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: auto;
+    padding-bottom: 70px;
+}
+
+#PartFive {
+    background-image: url('../img/Background/Part5.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 91vh;
+    /* padding: auto; */
+}
+
+.Name {
+    text-align: center;
+    margin: 0;
+    padding: 100px 0;
+}
+
+.Name h1 {
+    font-family: var(--fontA);    
+    font-size: 5.5em;
+    text-align: center;
+    margin: inherit auto;
+    color: var(--textB);
+    letter-spacing: 0.3em;
+    margin-bottom: 1.2em;
+}
+
+.Name p {
+    font-family: var(--fontA);
+    font-size: 1.3em;
+    color: var(--textB);
+    /* padding: 0 33em; */
+    width: 30%;
+    margin: auto;
+    margin-bottom: 3em;
+    text-justify: inter-word;
+    text-align: justify;
+}
+
+#BottomBar {
+    height: 50px;
+    background: var(--backgroundA);
+    padding: 1em;
+}
+
+#BottomBar p {
+    font-family: var(--fontA);
+    font-size: 1.2em;
+    height: 40px;
+    margin: 0;
+    padding: 2em;
+}
+
+.row {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 0 4px;
+}
+
+.column {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+}
+
+.column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+}
+
+#PartFive a {
+    transition-duration: 0.3s;
+}
+#PartFive a:hover {
+    filter: brightness(60%);
+}
+
+#PartFive .paddedBox {
+    display: grid;
+    grid-template-columns: 150px 150px 150px 150px 150px;
+    grid-template-rows: 150px 150px;
+    justify-content: center;
+    width: 100%;
+    margin-top: 4em;
+}
+
+#PartFive .paddedBox a {
+    place-self: center;
+}
+
+.exLink {
+    width: 100px;
+}
+
+.exlink:hover {
+    cursor: pointer;
+}
+
+#BlogContainer {
+    flex-direction: row;
+    display: flex;
+    grid-template-rows: 470px;
+    grid-gap: 20px;
+    padding: 20px;
+    height: 80vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+
+.blogPost {
+    height: 70vh;
+    flex: 0 0 40%;
+    margin: auto 20px;
+    border-radius: 50px;
+    background: var(--backgroundA);
+}
+
+.blogPost div {
+    width: 100%;
+    margin: 0;
+    height: 7vh;
+    background: var(--textA);
+    border-radius: 40px 40px 0 0;
+    color: var(--backgroundA);
+}
+
+.content {
+    margin: 2em;
+}
+
+.blogName {
+    font-size: 1.4em;
+    position: relative;
+    left: 40px;
+    top: 20px;
+    color: var(--backgroundA);
+    margin: 0;
+    font-weight: bold
+}
+
+.blogDate {
+    position: relative;
+    font-size: 1.4em;
+    top: -5px;
+    left: 80%;
+    margin: 0;
+}
+
+::-webkit-scrollbar {
+    width: auto;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--textA);
+    /* background: rgba(53, 53, 53, 0.5); */
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--backgroundA);
+    border-radius: 10px;
+    transition-duration: 0.3s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--backgroundB);
+}
+
+#Temp {
+    width: 400px;
+    height: 400px;
+    background: var(--textB);
+}
