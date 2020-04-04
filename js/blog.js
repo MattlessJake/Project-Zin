@@ -18,7 +18,7 @@ console.log(blogList);
 
 function GetFile(fileName) {
     let txtFile = new XMLHttpRequest();
-    txtFile.open("GET", "http://localhost:8000/BlogPosts/" + fileName, true);
+    txtFile.open("GET", "/BlogPosts/" + fileName, true);
     txtFile.onreadystatechange = function() {
         if (txtFile.readyState === 4) {
             if (txtFile.status === 200 || txtFile.status == 0) {
