@@ -49,27 +49,6 @@ window.onscroll = function() {
     }
 }
 
-let blogContainer = document.getElementById('BlogContainer');
-let temp = document.getElementById('Temp');
-
-function GetFile(fileName) {
-    let txtFile = new XMLHttpRequest();
-    txtFile.open("GET", "https://tempsiteforzin.netlify.com/BlogPosts/TestDoc.txt", true);
-    txtFile.onreadystatechange = function() {
-        if (txtFile.readyState === 4) {
-            if (txtFile.status === 200 || txtFile.status == 0) {
-                let allText = txtFile.responseText;
-                let lines = txtFile.responseText.split("\n")
-                console.log(allText);
-                for (i = 0; i < lines.length; i++) {
-                    temp.innerHTML += lines[i] + "<br />";
-                }
-            }
-        }
-    }
-    txtFile.send(null);
-}
-
 blogContainer.addEventListener("wheel", function() {
     event.preventDefault();
     blogContainer.scrollLeft += event.deltaY;
