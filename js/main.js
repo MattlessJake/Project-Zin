@@ -26,6 +26,13 @@ window.onscroll = function() {
         document.getElementById('FourthLink').classList.remove('active');
         document.getElementById('Rbd').classList.add('active');
     }
+    else if(document.documentElement.scrollTop >= document.getElementById('PartFour').offsetTop-80) {
+        document.getElementById('Lbd').classList.remove('active');
+        document.getElementById('SecondLink').classList.remove('active');
+        document.getElementById('ThirdLink').classList.remove('active');
+        document.getElementById('FourthLink').classList.add('active');
+        document.getElementById('Rbd').classList.remove('active');
+    }
     else if(document.documentElement.scrollTop >= document.getElementById('PartThree').offsetTop-80) {
         document.getElementById('Lbd').classList.remove('active');
         document.getElementById('SecondLink').classList.remove('active');

@@ -95,6 +95,16 @@ body {
     padding-bottom: 70px;
 }
 
+#PartFour {
+    background-image: url('../img/Background/Part4.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: auto;
+    padding-bottom: 70px;
+}
+
 #PartFive {
     background-image: url('../img/Background/Part5.jpg');
     background-attachment: fixed;
@@ -264,8 +274,17 @@ body {
     background: var(--backgroundB);
 }
 
+#embeds {
+    display: flex;
+}
+
 #Temp {
     width: 400px;
     height: 400px;
     background: var(--textB);
+}
+
+#twitch-embed {
+    margin-left: 6%;
+    margin-right: 3em;
 }
