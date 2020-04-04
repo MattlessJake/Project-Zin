@@ -52,7 +52,7 @@ window.onscroll = function() {
 let blogContainer = document.getElementById('BlogContainer');
 let temp = document.getElementById('Temp');
 
-window.onload = function() {
+function GetFile(fileName) {
     let txtFile = new XMLHttpRequest();
     txtFile.open("GET", "https://tempsiteforzin.netlify.com/BlogPosts/TestDoc.txt", true);
     txtFile.onreadystatechange = function() {
@@ -62,11 +62,15 @@ window.onload = function() {
                 let lines = txtFile.responseText.split("\n")
                 console.log(allText);
                 for (i = 0; i < lines.length; i++) {
-                    temp.innerHTML += lines[i] + "\n";
+                    temp.innerHTML += lines[i] + "<br />";
                 }
-                //temp.innerHTML = lines;
             }
         }
     }
     txtFile.send(null);
 }
+
+blogContainer.addEventListener("wheel", function() {
+    event.preventDefault();
+    blogContainer.scrollLeft += event.deltaY;
+});
