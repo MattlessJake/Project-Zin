@@ -2,36 +2,35 @@ let blog = document.getElementById('BlogContainer');
 blogList = new Array();
 
 $.ajax({
-    url: "/BlogPosts",
+    url: "https://tempsiteforzin.netlify.com/BlogPosts",
     success: function(data){
         $(data).find("a:contains(.txt)").each(function(){
             // will loop through 
             var images = $(this).attr("href");
 
-            blogList.push(images)
+            //blogList.push(images)
             GetFile(images);
-            //$('<p></p>').html(images).appendTo(box)
         });
     }
 });
-console.log(blogList);
+//console.log(blogList);
 
 function GetFile(fileName) {
     let txtFile = new XMLHttpRequest();
-    txtFile.open("GET", "/BlogPosts/" + fileName, true);
+    txtFile.open("GET", "https://tempsiteforzin.netlify.com/BlogPosts/" + fileName, true);
     txtFile.onreadystatechange = function() {
         if (txtFile.readyState === 4) {
             if (txtFile.status === 200 || txtFile.status == 0) {
                 let allText = txtFile.responseText;
                 let lines = txtFile.responseText.split("\n")
-                makePost(fileName, lines);
+                makePost(lines); //Adds html elements & stuff
             }
         }
     }
     txtFile.send(null);
 }
 
-function makePost(fileName, text) {
+function makePost(text) {
     let post = document.createElement('DIV');
     let topBar = document.createElement('DIV');
     let title = document.createElement('P');
