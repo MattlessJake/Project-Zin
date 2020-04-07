@@ -2,7 +2,7 @@ let blog = document.getElementById('BlogContainer');
 blogList = new Array();
 
 $.ajax({
-    url: "https://tempsiteforzin.netlify.com/BlogPosts",
+    url: "/BlogPosts/",
     success: function(data){
         $(data).find("a:contains(.txt)").each(function(){
             // will loop through 
@@ -17,7 +17,7 @@ $.ajax({
 
 function GetFile(fileName) {
     let txtFile = new XMLHttpRequest();
-    txtFile.open("GET", "https://tempsiteforzin.netlify.com/BlogPosts/" + fileName, true);
+    txtFile.open("GET", "BlogPosts/" + fileName, true);
     txtFile.onreadystatechange = function() {
         if (txtFile.readyState === 4) {
             if (txtFile.status === 200 || txtFile.status == 0) {
