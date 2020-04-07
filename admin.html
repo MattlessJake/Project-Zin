@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zindelo: Admin Things</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <div id='PartOne'>
+        <div class='Name' style='padding: 2em;'>
+            <h1 style='margin-bottom: 1em;'>ADMIN THINGS</h1>
+            <p>Use this part of the site to edit blog posts, add/remove images and the like.</p>
+        </div>
+        <div id='container'>
+            <form id='blogForm'>
+                <div id='Blog'>
+                    <div id='Top'>
+                        <input id='inputName' type="text" placeholder="Enter the post name here"/>
+                        <input id='inputDate' type='date' />
+                    </div>
+                    <textarea id='inputContent' form='blogForm' placeholder="Write the post text here."></textarea>
+                    <input onclick="SaveFile()" id='submit' type='button' value="Submit Blog Post" />
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type='text/javascript' src="js/save.js"></script>
+</body>
+</html>
