@@ -1,37 +1,36 @@
 let blog = document.getElementById('BlogContainer');
 blogList = new Array();
 
-// $.ajax({
-//     url: "/BlogPosts/",
-//     success: function(data){
-//         $(data).find("a:contains(.txt)").each(function(){
-//             // will loop through 
-//             var images = $(this).attr("href");
+$.ajax({
+    url: "/BlogPosts",
+    success: function(data){
+        $(data).find("a:contains(.txt)").each(function(){
+            // will loop through 
+            var images = $(this).attr("href");
 
-//             //blogList.push(images)
-//             GetFile(images);
-//         });
-//     }
-// });
+            //blogList.push(images)
+            GetFile(images);
+        });
+    }
+});
 //console.log(blogList);
-GetFile();
 
-function GetFile() {
+function GetFile(fileName) {
     let txtFile = new XMLHttpRequest();
-    txtFile.open("GET", "BlogPosts/" + "2019-09-19.txt", true);
+    txtFile.open("GET", "/BlogPosts/" + fileName, true);
     txtFile.onreadystatechange = function() {
         if (txtFile.readyState === 4) {
             if (txtFile.status === 200 || txtFile.status == 0) {
                 let allText = txtFile.responseText;
                 let lines = txtFile.responseText.split("\n")
-                makePost(lines); //Adds html elements & stuff
+                makePost(fileName, lines); //Adds html elements & stuff
             }
         }
     }
     txtFile.send(null);
 }
 
-function makePost(text) {
+function makePost(fileName, text) {
     let post = document.createElement('DIV');
     let topBar = document.createElement('DIV');
     let title = document.createElement('P');
