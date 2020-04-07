@@ -1,23 +1,23 @@
 let blog = document.getElementById('BlogContainer');
 blogList = new Array();
 
-$.ajax({
-    url: "/BlogPosts/",
-    success: function(data){
-        $(data).find("a:contains(.txt)").each(function(){
-            // will loop through 
-            var images = $(this).attr("href");
+// $.ajax({
+//     url: "/BlogPosts/",
+//     success: function(data){
+//         $(data).find("a:contains(.txt)").each(function(){
+//             // will loop through 
+//             var images = $(this).attr("href");
 
-            //blogList.push(images)
-            GetFile(images);
-        });
-    }
-});
+//             //blogList.push(images)
+//             GetFile(images);
+//         });
+//     }
+// });
 //console.log(blogList);
 
 function GetFile(fileName) {
     let txtFile = new XMLHttpRequest();
-    txtFile.open("GET", "BlogPosts/" + fileName, true);
+    txtFile.open("GET", "BlogPosts/" + "2019-09-19.txt", true);
     txtFile.onreadystatechange = function() {
         if (txtFile.readyState === 4) {
             if (txtFile.status === 200 || txtFile.status == 0) {
