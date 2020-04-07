@@ -14,8 +14,9 @@ blogList = new Array();
 //     }
 // });
 //console.log(blogList);
+GetFile();
 
-function GetFile(fileName) {
+function GetFile() {
     let txtFile = new XMLHttpRequest();
     txtFile.open("GET", "BlogPosts/" + "2019-09-19.txt", true);
     txtFile.onreadystatechange = function() {
