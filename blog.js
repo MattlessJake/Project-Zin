@@ -19,7 +19,7 @@ $.ajax({
 
 $.ajax({
     type: "POST",
-    url: '../blog.php',
+    url: 'blog.php',
     dataType: 'json',
     data: {functionname: 'add', arguments: [1, 2]},
 
