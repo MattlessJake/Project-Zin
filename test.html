@@ -73,10 +73,11 @@
             <div><p class='blogName'>Title Bar</p><p class='blogDate'>04/04/2020</p></div>
             <p class='content'> Nunc in erat ut purus venenatis porta. Vestibulum commodo ut erat maximus mattis. Maecenas vel justo sed nibh aliquam viverra ut vestibulum arcu. Etiam pulvinar malesuada nunc aliquam ornare. Fusce cursus tortor velit, ac aliquam elit congue auctor. Suspendisse diam ex, commodo ut augue lacinia, finibus egestas sapien. Suspendisse viverra ligula nulla, nec blandit quam egestas eu. Cras condimentum enim vel mauris lobortis, in molestie mi tristique. Suspendisse in tellus ut dui lacinia ultricies vitae non nunc. Praesent pulvinar mi aliquam, tempor erat id, elementum ante. Mauris iaculis vitae nulla a aliquam. Sed aliquet risus quis turpis commodo consequat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
         </div>
-        <form action="blog.php" method="GET" target="bob">
+        <form action="blog.php" method="POST" target="bob">
+            <input type="text" name="firstname" />
             <button type='submit'>Send</button>
         </form>
-        <iframe id='bob'></iframe>
+        <iframe name="bob" id='bob'></iframe>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <!-- <script>
