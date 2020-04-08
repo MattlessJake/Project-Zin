@@ -4,7 +4,7 @@ blogList = new Array();
 $.ajax({
     type: "GET",
     async: false,
-    url: "/BlogPosts",
+    url: "BlogPosts/",
     success: function(data){
         $(data).find("a:contains(.txt)").each(function(){
             // will loop through 
