@@ -17,11 +17,22 @@ $.ajax({
 });
 //console.log(blogList);
 
-function GetFolder() {
-    let folder = new XMLHttpRequest();
-    folder.open("GET", "/BlogPosts/", true);
-    
-}
+$.ajax({
+    type: "POST",
+    url: '../blog.php',
+    dataType: 'json',
+    data: {functionname: 'add', arguments: [1, 2]},
+
+    success: function (obj, textstatus) {
+        if( !('error' in obj) ) {
+            yourVariable = obj.result;
+            console.log(yourVariable);
+        }
+        else {
+            console.log(obj.error);
+        }
+    }
+});
 
 function GetFile(fileName) {
     let txtFile = new XMLHttpRequest();
