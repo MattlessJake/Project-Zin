@@ -19,7 +19,7 @@ blogList = new Array();
 
 $.ajax({
     type: "POST",
-    url: 'blog.php',
+    url: 'js/blog.php',
     dataType: 'json',
     data: {innertext: 'sdykuasffukyv', arguments: [1, 2]},
     success: function(result) {
