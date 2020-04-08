@@ -1,36 +1,29 @@
 let blog = document.getElementById('BlogContainer');
 blogList = new Array();
 
-$.ajax({
-    type: "GET",
-    async: false,
-    url: "BlogPosts/",
-    success: function(data){
-        $(data).find("a:contains(.txt)").each(function(){
-            // will loop through 
-            var images = $(this).attr("href");
+// $.ajax({
+//     type: "GET",
+//     async: false,
+//     url: "BlogPosts/",
+//     success: function(data){
+//         $(data).find("a:contains(.txt)").each(function(){
+//             // will loop through 
+//             var images = $(this).attr("href");
 
-            //blogList.push(images)
-            GetFile(images);
-        });
-    }
-});
+//             //blogList.push(images)
+//             GetFile(images);
+//         });
+//     }
+// });
 //console.log(blogList);
 
 $.ajax({
     type: "POST",
     url: 'blog.php',
     dataType: 'json',
-    data: {functionname: 'add', arguments: [1, 2]},
-
-    success: function (obj, textstatus) {
-        if( !('error' in obj) ) {
-            yourVariable = obj.result;
-            console.log(yourVariable);
-        }
-        else {
-            console.log(obj.error);
-        }
+    data: {innertext: 'sdykuasffukyv', arguments: [1, 2]},
+    success: function(result) {
+        console.log("The operation was successful");
     }
 });
 
