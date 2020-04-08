@@ -2,6 +2,8 @@ let blog = document.getElementById('BlogContainer');
 blogList = new Array();
 
 $.ajax({
+    type: "GET",
+    async: false,
     url: "/BlogPosts",
     success: function(data){
         $(data).find("a:contains(.txt)").each(function(){
@@ -14,6 +16,12 @@ $.ajax({
     }
 });
 //console.log(blogList);
+
+function GetFolder() {
+    let folder = new XMLHttpRequest();
+    folder.open("GET", "/BlogPosts/", true);
+    
+}
 
 function GetFile(fileName) {
     let txtFile = new XMLHttpRequest();
