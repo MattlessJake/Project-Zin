@@ -18,7 +18,7 @@ blogList = new Array();
 //console.log(blogList);
 
 $.ajax({
-    type: "POST",
+    type: "GET",
     url: '/js/blog.php',
     dataType: 'json',
     data: {innertext: 'sdykuasffukyv', arguments: [1, 2]},
