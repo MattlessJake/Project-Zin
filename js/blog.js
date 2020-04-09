@@ -18,12 +18,12 @@ blogList = new Array();
 //console.log(blogList);
 
 $.ajax({
-    type: "GET",
-    url: '/js/blog.php',
+    type: "POST",
+    url: 'blog.php',
     dataType: 'json',
-    data: {innertext: 'sdykuasffukyv', arguments: [1, 2]},
-    success: function(result) {
-        console.log("The operation was successful");
+    data: {directory: "BlogPosts/"},
+    success: function(data) {
+        //console.log();
     }
 });
 
