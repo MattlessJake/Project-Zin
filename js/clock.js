@@ -7,21 +7,25 @@ canvas.height = window.innerHeight;
 function main() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     let d  = new Date();
-    let n = d.getUTCHours() + 10;
+
+    let b = new Date();
+    let utc = b.getTime() + (b.getTimezoneOffset() * 60000);
+    let nd = new Date(utc + (3600000*11));
+    let n = nd.getUTCHours();
 
     let sc = d.getSeconds();
     let mn = d.getMinutes();
     let hr = n;//d.getHours();
     let ms = d.getMilliseconds();
 
-    function hours12() { return (n + 24) % 12 || 12; }
+    function hours12() { return (n + 24) % 12 || 0 ; }
     let hr12 = hours12();
 
 
     drawArc(canvas.width/2, canvas.height/2, 300, -90, 360, false, "#353535", "#353535", true);                    
-    drawArc(canvas.width/2, canvas.height/2, 300, -90, hr12*30-90, false, "#dfdfdf", "None", false);                    
-    drawArc(canvas.width/2, canvas.height/2, 230, -90, mn*6-90, false, "#46e6cb", "None", false);
-    drawArc(canvas.width/2, canvas.height/2, 160, -90, sc*6-90, false, "#dfdfdf", "None", false);
+    drawArc(canvas.width/2, canvas.height/2, 300, -90, (hr12*30)+(mn*6/12)-90, false, "#dfdfdf", "None", false);                    
+    drawArc(canvas.width/2, canvas.height/2, 230, -90, (mn*6)+(sc*6/60)-90, false, "#46e6cb", "None", false);
+    drawArc(canvas.width/2, canvas.height/2, 160, -90, (sc*6)+(ms*0.36/60)-90, false, "#dfdfdf", "None", false);
     drawArc(canvas.width/2, canvas.height/2, 140, -90, ms*0.36-90, false, "#46e6cb", "None", false);
     ctx.beginPath();
     ctx.fillStyle = 'White';

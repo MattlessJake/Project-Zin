@@ -1,31 +1,32 @@
 let blog = document.getElementById('BlogContainer');
 blogList = new Array();
 
-// $.ajax({
-//     type: "GET",
-//     async: false,
-//     url: "BlogPosts/",
-//     success: function(data){
-//         $(data).find("a:contains(.txt)").each(function(){
-//             // will loop through 
-//             var images = $(this).attr("href");
-
-//             //blogList.push(images)
-//             GetFile(images);
-//         });
-//     }
-// });
-//console.log(blogList);
-
 $.ajax({
-    type: "POST",
-    url: 'blog.php',
-    dataType: 'json',
-    data: {directory: "BlogPosts/"},
-    success: function(data) {
-        //console.log();
+    type: "GET",
+    async: false,
+    url: "BlogPosts/",
+    success: function(data){
+        $(data).find("a:contains(.txt)").each(function(){
+            // will loop through 
+            var images = $(this).attr("href");
+
+            //blogList.push(images)
+            GetFile(images);
+        });
     }
 });
+//console.log(blogList);
+
+//This is for the blog system (WIP)
+// $.ajax({
+//     type: "POST",
+//     url: 'blog.php',
+//     dataType: 'json',
+//     data: {functionname: "getDirectory", input: "{$_SERVER['DOCUMENT_ROOT']}/BlogPosts"},
+//     success: function(data) {
+//         alert(data);
+//     }
+// });
 
 function GetFile(fileName) {
     let txtFile = new XMLHttpRequest();

@@ -3,6 +3,70 @@ let scrollBox = document.getElementById('scrollBox')
 let originalWidth = navbar.style.width;
 let originalLeft = navbar.style.left;
 
+let itemList = [];
+
+let Modal = document.getElementById('Modal');
+let ModalIMG = document.getElementById('ModalIMG');
+let ModalTitle = document.getElementById('ModalName');
+let ModalDesc = document.getElementById('ModalDesc');
+let ModalPrice = document.getElementById('ModalPrice');
+let Grid = document.getElementById('ComGrid');
+
+class comItem {
+    constructor(name, description, price, imageSource) {
+        this.Name = name;
+        this.Description = description;
+        this.Price = price;
+        this.Image = imageSource
+    }
+}
+
+function GetList() {
+    for (i = 0; i < itemList.length; i++) {
+        MakeListItem(itemList[i].Name, itemList[i].Description, itemList[i].Price, itemList[i].Image);
+    }
+}
+
+// Make Commission Items here:
+itemList.push(new comItem(
+    "Face Sketch",
+    "These sketches are done in black in white, with details.",
+    "$10",
+    new Image().src = "img/Commissions/Face_Sketch.png"
+));
+itemList.push(new comItem(
+    "Forum Chibi",
+    "These are done in full colour. Anime style chibi. (Small resolution by default)",
+    "$10",
+    new Image().src = "img/Commissions/Forum_Chibi.png"
+));
+itemList.push(new comItem(
+    "Murder Noodle",
+    "$15 for black & white, full body cartoon style.\n$20 for colour with cell shading.",
+    "$15-$20",
+    new Image().src = "img/Commissions/Murder_Noodle.png"
+));
+itemList.push(new comItem(
+    "Pinup Style",
+    "$30 for a more realistic drawing than with the Noodle. Full body, black and white.\n+$25 for cel shading colour. (Total: $55)\n+$40 for a digital painting. (Total: $70)",
+    "$30-$70",
+    new Image().src = "img/Commissions/Pinup_Style.png"
+));
+itemList.push(new comItem(
+    "Cat Chibi",
+    "Yea, you can have your character as a wierd cat, what of it?",
+    "$5",
+    new Image().src = "img/Commissions/Cat_Chibi.png"
+));
+itemList.push(new comItem(
+    "LIMITED EDITION<br />Gatcha Chibi",
+    "A Chibi, slightly lower detail but trapped inside a gatcha ball.\nThese are limited edition though, so if you want one, don't miss out!",
+    "$10",
+    new Image().src = "img/Commissions/Gatcha_Chibi.png"
+));
+//End Commission Items
+GetList();
+
 window.onscroll = function() {
     if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
         navbar.style.width = "100%";
@@ -19,46 +83,113 @@ window.onscroll = function() {
         document.getElementById('Rbd').style.borderRadius = "0 0 50px 0";
     }
 
-    if (document.documentElement.scrollTop >= document.getElementById('PartFive').offsetTop-80) {
+    if (document.documentElement.scrollTop >= document.getElementById('PartSix').offsetTop-80) {
         document.getElementById('Lbd').classList.remove('active');
         document.getElementById('SecondLink').classList.remove('active');
-        document.getElementById('ThirdLink').classList.remove('active');
+        // document.getElementById('ThirdLink').classList.remove('active');
         document.getElementById('FourthLink').classList.remove('active');
+        document.getElementById('FithLink').classList.remove('active');
         document.getElementById('Rbd').classList.add('active');
+    }
+    else if (document.documentElement.scrollTop >= document.getElementById('PartFive').offsetTop-80) {
+        document.getElementById('Lbd').classList.remove('active');
+        document.getElementById('SecondLink').classList.remove('active');
+        // document.getElementById('ThirdLink').classList.remove('active');
+        document.getElementById('FourthLink').classList.remove('active');
+        document.getElementById('FithLink').classList.add('active');
+        document.getElementById('Rbd').classList.remove('active');
     }
     else if(document.documentElement.scrollTop >= document.getElementById('PartFour').offsetTop-80) {
         document.getElementById('Lbd').classList.remove('active');
         document.getElementById('SecondLink').classList.remove('active');
-        document.getElementById('ThirdLink').classList.remove('active');
+        // document.getElementById('ThirdLink').classList.remove('active');
         document.getElementById('FourthLink').classList.add('active');
+        document.getElementById('FithLink').classList.remove('active');
         document.getElementById('Rbd').classList.remove('active');
     }
-    else if(document.documentElement.scrollTop >= document.getElementById('PartThree').offsetTop-80) {
-        document.getElementById('Lbd').classList.remove('active');
-        document.getElementById('SecondLink').classList.remove('active');
-        document.getElementById('ThirdLink').classList.add('active');
-        document.getElementById('FourthLink').classList.remove('active');
-        document.getElementById('Rbd').classList.remove('active');
-    }
+    // else if(document.documentElement.scrollTop >= document.getElementById('PartThree').offsetTop-80) {
+    //     document.getElementById('Lbd').classList.remove('active');
+    //     document.getElementById('SecondLink').classList.remove('active');
+    //     document.getElementById('ThirdLink').classList.add('active');
+    //     document.getElementById('FourthLink').classList.remove('active');
+    //     document.getElementById('FithLink').classList.remove('active');
+    //     document.getElementById('Rbd').classList.remove('active');
+    // }
     else if(document.documentElement.scrollTop >= document.getElementById('PartTwo').offsetTop-80) {
         document.getElementById('Lbd').classList.remove('active');
         document.getElementById('SecondLink').classList.add('active');
-        document.getElementById('ThirdLink').classList.remove('active');
+        // document.getElementById('ThirdLink').classList.remove('active');
         document.getElementById('FourthLink').classList.remove('active');
+        document.getElementById('FithLink').classList.remove('active');
         document.getElementById('Rbd').classList.remove('active');
     }
     else {
         document.getElementById('Lbd').classList.add('active');        
         document.getElementById('SecondLink').classList.remove('active');
-        document.getElementById('ThirdLink').classList.remove('active');
+        // document.getElementById('ThirdLink').classList.remove('active');
         document.getElementById('FourthLink').classList.remove('active');
+        document.getElementById('FithLink').classList.remove('active');
         document.getElementById('Rbd').classList.remove('active');
     }
 }
 
-let blogContainer = document.getElementById('BlogContainer');
+function MakeListItem(Name, Description, Price, ImageSource) {
+    let container = document.createElement('DIV');
+    let image = document.createElement('IMG');
+    let price = document.createElement('P');
+    let container2 = document.createElement('DIV');
+    let name = document.createElement('P');
+    let description = document.createElement('P');
 
-blogContainer.addEventListener("wheel", function() {
-    event.preventDefault();
-    blogContainer.scrollLeft += event.deltaY;
-});
+    container.classList.add('comItem');
+    // container.addEventListener('click', GetModal(container));
+    container.setAttribute("onclick", "GetModal(this)");
+
+    image.src = ImageSource;
+    container.appendChild(image);
+    
+    price.innerHTML = Price;
+    price.classList.add('price');
+    container.appendChild(price);
+
+    name.innerHTML = Name;
+    name.classList.add('itemName');
+    container2.appendChild(name);
+
+    description.innerHTML = Description;
+    description.classList.add('itemDescription');
+    container2.appendChild(description);
+    
+    container.appendChild(container2);
+    Grid.appendChild(container);
+}
+
+function GetModal(element) {
+    Modal.style.display = "block";
+    let children = element.childNodes;
+    for (i = 0; i < children.length; i++) {
+        if (children[i].nodeName == "IMG") ModalIMG.src = children[i].src;
+        else if (children[i].nodeName == "P") ModalPrice.innerText = children[i].innerText;
+        else if (children[i].nodeName == "DIV") {
+            let c = children[i].childNodes;
+            for (k = 0; k < c.length; k++) {
+                if (c[k].nodeName == "P") {
+                    if (c[k].className == "itemName") ModalTitle.innerText = c[k].innerText;
+                    else if (c[k].className == "itemDescription") ModalDesc.innerText = c[k].innerText;
+                }
+            }
+        }
+    }
+}
+
+function CloseModal() {
+    Modal.style.display = "none";
+}
+
+//Blog Things
+// let blogContainer = document.getElementById('BlogContainer');
+
+// blogContainer.addEventListener("wheel", function() {
+//     event.preventDefault();
+//     blogContainer.scrollLeft += event.deltaY;
+// });

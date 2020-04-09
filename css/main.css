@@ -111,6 +111,16 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    padding: auto;
+    padding-bottom: 70px;
+}
+
+#PartSix {
+    background-image: url('../img/Background/Part3.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 91vh;
     /* padding: auto; */
 }
@@ -170,19 +180,21 @@ body {
 }
 
 .column img {
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.3);
     margin-top: 8px;
     vertical-align: middle;
     width: 100%;
 }
 
-#PartFive a {
+#PartSix a {
     transition-duration: 0.3s;
 }
-#PartFive a:hover {
+#PartSix a:hover {
     filter: brightness(60%);
 }
 
-#PartFive .paddedBox {
+#PartSix .paddedBox {
     display: grid;
     grid-template-columns: 150px 150px 150px 150px 150px;
     grid-template-rows: 150px 150px;
@@ -191,7 +203,7 @@ body {
     margin-top: 4em;
 }
 
-#PartFive .paddedBox a {
+#PartSix .paddedBox a {
     place-self: center;
 }
 
@@ -256,6 +268,7 @@ body {
 }
 
 ::-webkit-scrollbar {
+    display: none;
     width: auto;
 }
 
@@ -287,4 +300,202 @@ body {
 #twitch-embed {
     margin-left: 6%;
     margin-right: 3em;
+}
+
+#ComGrid {
+    display: grid;
+    grid-template-columns: 315px 315px 315px 315px;
+    grid-gap: 40px;
+    margin: 2em;
+    justify-content: center;
+}
+
+.comItem {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 315px;
+    transition-duration: 0.07s;
+    border-radius: 10px;
+    /* border: 1px solid var(--textB); */
+}
+
+.comItem:hover {
+    margin-top: -2px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+}
+
+.comItem img {
+    width: 315px;
+    height: 290px;
+    border-radius: 10px 10px 0 0;
+    object-fit: contain;
+    /* object-fit: cover; */
+    background: #000;
+}
+
+.comItem div {
+    height: 170px;
+    background: #fff;
+    border-radius: 0 0 10px 10px;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid var(--textB);
+}
+
+.comItem div .itemName {
+    margin: 1em;
+    font-size: 1.2em;
+    padding: 0;
+    font-weight: bold;
+    height: 100px;
+}
+
+.comItem div .itemDescription {
+    margin: 1em;
+    padding: 0;
+    /* visibility: hidden; */
+    display: none;
+}
+
+.comItem .price {
+    position: absolute;
+    font-weight: bold;
+    margin: 10px;
+    padding: 10px;
+    top: 0;
+    right: 0;
+    background: var(--backgroundA);
+    color: var(--textA);
+    border-radius: 20px;
+}
+
+.close {
+    margin: 0;
+    padding: 10px;
+    position: absolute;
+    right: 32px;
+    top: 32px;
+    width: 45px;
+    height: 45px;
+    opacity: 0.3;
+    transition-duration: 0.2s;
+}
+.close:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+.close:before, .close:after {
+    position: absolute;
+    left: 30px;
+    content: ' ';
+    height: 45px;
+    width: 2px;
+    background-color: var(--textB);
+}
+.close:before {
+    transform: rotate(45deg);
+}
+.close:after {
+    transform: rotate(-45deg);
+}
+
+#Modal {
+    display: none;
+    z-index: 4;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+#ModalContent {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+#ModalContent {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    flex-direction: column;
+    justify-content: center;
+    margin: 3em auto;
+    border-radius: 10px;
+}
+
+#ModalIMG {
+    height: 512px;
+    width: 1024px;
+    object-fit: contain;
+    background: rgba(0, 0, 0, 1);
+    border-radius: 10px 10px 0 0;
+}
+
+#ModalBox {
+    position: relative;
+    background: #fff;
+    height: 300px;
+    border-radius: 0 0 10px 10px;
+    color: var(--textA);
+}
+
+#ModalPrice {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 2em;
+    background: var(--backgroundA);
+    padding: 10px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+#ModalName {
+    margin: 20px;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+#ModalDesc {
+    margin: 20px;
+    word-wrap: normal;
+    width: 850px;
+    font-size: 1.1em;
+}
+
+#ModalBuy {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 2em;
+    font-weight: bold;
+    text-align: center;
+    background: var(--backgroundA);
+    color: var(--textA);
+    padding: 10px;
+    width: 20%;
+    border-radius: 20px;
+    transition-duration: 0.2s;
+    text-decoration: none;
+}
+
+#ModalBuy:hover {
+    background: var(--backgroundB);
+    cursor: pointer;
 }
