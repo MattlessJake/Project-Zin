@@ -315,7 +315,7 @@ body {
     flex-direction: column;
     position: relative;
     width: 315px;
-    transition-duration: 0.07s;
+    transition-duration: 0.12s;
     border-radius: 10px;
     /* border: 1px solid var(--textB); */
 }

@@ -34,7 +34,7 @@
             <div class='Name'>
                 <div class='Name'>
                     <h1>THINGS I'VE DONE</h1>
-                    <p>This is a gallery full of some of my things. Theres some art, as well as crafty things.</p>
+                    <p>This is a gallery full of some of my things. Feel free to look around!</p>
                 </div>
                 <div class='grid'>
                     <div class='row'>
@@ -46,12 +46,12 @@
                         </div>
                         <div class='column'>
                             <img src="img/gallery/Noodle2.png"/>
-                            <img src="img/gallery/Chibi3.png"/>
+                            <img src="img/gallery/Misc1.png"/>
                             <img src="img/Gallery/Noodle3.png"/>
                         </div>
                         <div class='column'>
-                            <img src="img/gallery/Face_Sketch1.png"/>
-                            <img src="img/gallery/Misc1.png"/>
+                            <img src="img/gallery/sonicface.png"/>
+                            <img src="img/gallery/Chibi3.png"/>
                             <img src="img/Gallery/Pinup4.png"/>
                             <img src="img/Gallery/Pinup3.png"/>
                         </div>
@@ -151,13 +151,20 @@
         <!-- <script src='js/blog.js'></script> -->
         <script src="https://embed.twitch.tv/embed/v1.js"></script>
         <script type="text/javascript">
-            new Twitch.Embed("twitch-embed", {
+            let embed = new Twitch.Embed("twitch-embed", {
                 width: 1200,
                 height: 600,
                 channel: "Zer0bandit",
+                theme: "dark",
+
+            });
+
+            embed.addEventListener(Twitch.Embed.VIDEO_READY, () => {
+                var player = embed.getPlayer();
+                player.pause();
+            });
                 // only needed if your site is also embedded on embed.example.com and othersite.example.com 
                 //parent: ["embed.example.com", "othersite.example.com"]
-            });
         </script>
     </body>
     </html>
