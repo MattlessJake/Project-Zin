@@ -22,7 +22,7 @@ function main() {
     let hr12 = hours12();
 
 
-    drawArc(canvas.width/2, canvas.height/2, 300, -90, 360, false, "#353535", "#353535", true);                    
+    //drawArc(canvas.width/2, canvas.height/2, 300, -90, 360, false, "#353535", "#353535", true);                    
     drawArc(canvas.width/2, canvas.height/2, 300, -90, (hr12*30)+(mn*6/12)-90, false, "#dfdfdf", "None", false);                    
     drawArc(canvas.width/2, canvas.height/2, 230, -90, (mn*6)+(sc*6/60)-90, false, "#46e6cb", "None", false);
     drawArc(canvas.width/2, canvas.height/2, 160, -90, (sc*6)+(ms*0.36/60)-90, false, "#dfdfdf", "None", false);
