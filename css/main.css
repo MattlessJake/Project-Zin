@@ -156,14 +156,14 @@ body {
 }
 
 #BottomBar {
-    height: 50px;
+    /* height: 50px; */
     background: var(--backgroundA);
     padding: 1em;
 }
 
 #BottomBar p {
     font-family: var(--fontA);
-    font-size: 1.2em;
+    font-size: 1em;
     height: 40px;
     margin: 0;
     padding: 2em;
@@ -518,4 +518,12 @@ body {
 
 #AusClock {
     margin: auto;
+}
+
+#BottomBar p {
+    color: var(--textA);
+    padding: 0;
+    text-align: center;
+    padding: 5px 0;
+    height: auto;
 }
