@@ -5,6 +5,12 @@ let originalLeft = navbar.style.left;
 
 let itemList = [];
 
+function isMobileDevice() {
+    return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+};
+
+let smallScreen = isMobileDevice();
+
 let Modal = document.getElementById('Modal');
 let ModalIMG = document.getElementById('ModalIMG');
 let ModalTitle = document.getElementById('ModalName');
@@ -68,19 +74,21 @@ itemList.push(new comItem(
 GetList();
 
 window.onscroll = function() {
-    if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-        navbar.style.width = "100%";
-        navbar.style.left = "0";
-        navbar.style.borderRadius = "0";
-        document.getElementById('Lbd').style.borderRadius = "0";
-        document.getElementById('Rbd').style.borderRadius = "0";
-    }
-    else {
-        navbar.style.width = originalWidth;
-        navbar.style.left = originalLeft;
-        navbar.style.borderRadius = "0 0 50px 50px";
-        document.getElementById('Lbd').style.borderRadius = "0 0 0 50px";
-        document.getElementById('Rbd').style.borderRadius = "0 0 50px 0";
+    if (!smallScreen) {
+        if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+            navbar.style.width = "100%";
+            navbar.style.left = "0";
+            navbar.style.borderRadius = "0";
+            document.getElementById('Lbd').style.borderRadius = "0";
+            document.getElementById('Rbd').style.borderRadius = "0";
+        }
+        else {
+            navbar.style.width = originalWidth;
+            navbar.style.left = originalLeft;
+            navbar.style.borderRadius = "0 0 50px 50px";
+            document.getElementById('Lbd').style.borderRadius = "0 0 0 50px";
+            document.getElementById('Rbd').style.borderRadius = "0 0 50px 0";
+        }
     }
 
     if (document.documentElement.scrollTop >= document.getElementById('PartSix').offsetTop-80) {

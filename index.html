@@ -6,6 +6,9 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Zindelo | Welcome Home!</title>
         <link rel="stylesheet" href="css/main.css" />
+        <link rel="stylesheet" media="screen and (max-width: 1100px)" href="css/midscreen.css" />
+        <link rel="stylesheet" media="screen and (max-width: 450px)" href="css/smallscreen.css" />
+        <link rel='Icon' href='img/icon.png'/>
     </head>
     <body>
         <div id='PartOne'>   
@@ -32,34 +35,32 @@
 
         <div id='PartTwo'>
             <div class='Name'>
-                <div class='Name'>
-                    <h1>THINGS I'VE DONE</h1>
-                    <p>This is a gallery full of some of my things. Feel free to look around!</p>
-                </div>
-                <div class='grid'>
-                    <div class='row'>
-                        <div class='column'>
-                            <img src="img/gallery/Chibi1.png"/>
-                            <img src="img/gallery/Misc3.png"/>
-                            <img src="img/gallery/Pinup1.png"/>
-                            <img src="img/gallery/Pinup2.png"/>
-                        </div>
-                        <div class='column'>
-                            <img src="img/gallery/Noodle2.png"/>
-                            <img src="img/gallery/Misc1.png"/>
-                            <img src="img/Gallery/Noodle3.png"/>
-                        </div>
-                        <div class='column'>
-                            <img src="img/gallery/sonicface.png"/>
-                            <img src="img/gallery/Chibi3.png"/>
-                            <img src="img/Gallery/Pinup4.png"/>
-                            <img src="img/Gallery/Pinup3.png"/>
-                        </div>
-                        <div class='column'>
-                            <img src="img/Gallery/Misc2.png"/>
-                            <img src="img/Gallery/Chibi2.png"/>
-                            <img src="img/gallery/Noodle1.png"/>
-                        </div>
+                <h1>THINGS I'VE DONE</h1>
+                <p>This is a gallery full of some of my things. Feel free to look around!</p>
+            </div>
+            <div class='grid'>
+                <div class='row'>
+                    <div class='column'>
+                        <img src="img/gallery/Chibi1.png"/>
+                        <img src="img/gallery/Misc3.png"/>
+                        <img src="img/gallery/Pinup1.png"/>
+                        <img src="img/gallery/Pinup2.png"/>
+                    </div>
+                    <div class='column'>
+                        <img src="img/gallery/Noodle2.png"/>
+                        <img src="img/gallery/Misc1.png"/>
+                        <img src="img/Gallery/Noodle3.png"/>
+                    </div>
+                    <div class='column'>
+                        <img src="img/gallery/Chibi3.png"/>
+                        <img src="img/gallery/sonicface.png"/>
+                        <img src="img/Gallery/Pinup4.png"/>
+                        <img src="img/Gallery/Pinup3.png"/>
+                    </div>
+                    <div class='column'>
+                        <img src="img/Gallery/Misc2.png"/>
+                        <img src="img/Gallery/Chibi2.png"/>
+                        <img src="img/gallery/Noodle1.png"/>
                     </div>
                 </div>
             </div>
@@ -80,7 +81,7 @@
 
         <div id='PartFour'>
             <div class='Name' style='padding: 50px 0 0 0'>
-                <h1>COMMISSIONY THINGS</h1>
+                <h1>GET MY THINGS</h1>
                 <p>I make a bunch of things! This is a place where you can check out <i>what</i> I do, if you want!
                     <br />If you <i>do</i> want to commission anything, please contact me directly, please.</p>
             </div>
@@ -99,14 +100,20 @@
         <div id='PartFive'>
             <div class='Name' style='padding: 50px 0 0 0'>
                 <h1>USEFUL THINGS</h1>
-                <p>Here are a bunch of useful things, meaning you can check out if I'm streaming or not right from this site! There's also a twitter page so you can check out what I've been up to. (Also a clock to help you non eastern Australian peeps out.)</p>
+                <p>Here are a bunch of useful things, meaning you can check out if I'm streaming or not right from this site! There's also a twitter page so you can check out what I've been up to. (Also a clock to help you non eastern Australian peeps out.)<br /><strong>Note: This currently only works on desktop. For you mobile guys, check below!</strong></p>
             </div>
-            <div id='embeds'>
+            <!-- <div id='embeds'>
                 <div id='twitch-embed'></div>
                 <a class="twitter-timeline" data-width="400" data-height="600" data-theme="dark" href="https://twitter.com/Zinthings?ref_src=twsrc%5Etfw">Tweets by Zinthings</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>
+            <div id='SmallEmbeds'>
+                <div id='twitch-embed-small'></div>
+                <a class="twitter-timeline" data-width="300" data-height="450" data-theme="dark" href="https://twitter.com/Zinthings?ref_src=twsrc%5Etfw">Tweets by Zinthings</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div> -->
             <canvas id='AusClock'></canvas>
             <script src="js/clock.js"></script>
+            <canvas id='AusClock-small'></canvas>
+            <script src="js/clockSmall.js"></script>
         </div>
 
         <div id='PartSix'>
@@ -152,6 +159,13 @@
             let embed = new Twitch.Embed("twitch-embed", {
                 width: 1200,
                 height: 600,
+                channel: "Zer0bandit",
+                theme: "dark",
+
+            });
+            let embedSmall = new Twitch.Embed("twitch-embed-small", {
+                width: 900,
+                height: 450,
                 channel: "Zer0bandit",
                 theme: "dark",
 

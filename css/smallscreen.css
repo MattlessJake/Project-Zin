@@ -1,0 +1,104 @@
+@media only screen and (max-width: 450px) {
+
+    
+    body {
+        overflow-x: hidden;
+    }
+    
+    #NavBar {
+        width: 100%;
+        left: 0;
+        font-size: 0.5em;
+    }
+
+    .close {
+        opacity: 1;
+    }
+
+    .Name h1 {
+        font-size: 3em;
+    }
+
+    .Name p {
+        font-size: 0.8em;
+        width: 70%;
+    }
+
+    .row {
+        flex-wrap: wrap;
+    }
+
+    .column {
+        flex: 100%;
+        max-width: 100%;
+    }
+
+    #ComGrid {
+        grid-template-columns: 80%;
+    }
+
+    .comItem, .comItem img {
+        width: 100%;
+    }
+
+    #PartSix {
+        height: auto;
+        padding-bottom: 40px;
+    }
+
+    #PartSix .paddedBox {
+        grid-template-columns: 150px 150px;
+        grid-auto-rows: 150px;
+    }
+
+    .close {
+        right: 16px;
+        top: 16px;
+    }
+
+    #embeds {
+        display: none;
+    }
+
+    #SmallEmbeds {
+        display: none;
+    }
+
+    #ModalName {
+        font-size: 24px;
+    }
+
+    #ModalContent {
+        margin: 40px auto;
+    }
+
+    #ModalIMG {
+        height: 200px;
+        width: 350px;
+        object-fit: contain;
+        background: rgba(0, 0, 0, 1);
+        border-radius: 10px 10px 0 0;
+    }
+
+    #ModalBox {
+        width: 350px;
+        height: 300px;
+    }
+
+    #ModalDesc {
+        width: 320px;
+    }
+
+    #ModalPrice {
+        right: initial;
+        top: initial;
+        bottom: 0;
+        left: 0;
+        margin: 1em;
+    }
+
+    #ModalBuy {
+        width: 60%;
+        margin: 1em;
+    }
+}

@@ -3,6 +3,7 @@
 * {
     /*border: 1px solid darkolivegreen;*/
     scroll-behavior: smooth;
+    font-family: 'Montserrat', sans-serif;
 }
 
 :root {
@@ -83,6 +84,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     padding: auto;
+    padding-bottom: 100px;
 }
 
 #PartThree {
@@ -165,6 +167,12 @@ body {
     height: 40px;
     margin: 0;
     padding: 2em;
+}
+
+.grid {
+    display: flex;
+    margin: 0 2.5%;
+    justify-content: center;
 }
 
 .row {
@@ -304,7 +312,7 @@ body {
 
 #ComGrid {
     display: grid;
-    grid-template-columns: 315px 315px 315px 315px;
+    grid-template-columns: 20% 20% 20% 20%;
     grid-gap: 40px;
     margin: 2em;
     justify-content: center;
@@ -314,7 +322,7 @@ body {
     display: flex;
     flex-direction: column;
     position: relative;
-    width: 315px;
+    width: 100%;
     transition-duration: 0.12s;
     border-radius: 10px;
     /* border: 1px solid var(--textB); */
@@ -327,7 +335,7 @@ body {
 }
 
 .comItem img {
-    width: 315px;
+    width: 100%;
     height: 290px;
     border-radius: 10px 10px 0 0;
     object-fit: contain;
@@ -455,6 +463,10 @@ body {
     color: var(--textA);
 }
 
+#AusClock-small {
+    display: none;
+}
+
 #ModalPrice {
     position: absolute;
     top: 0;
@@ -498,4 +510,8 @@ body {
 #ModalBuy:hover {
     background: var(--backgroundB);
     cursor: pointer;
+}
+
+#SmallEmbeds {
+    display: none;
 }

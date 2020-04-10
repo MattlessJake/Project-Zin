@@ -1,0 +1,106 @@
+@media only screen and (max-width: 1100px) {
+    
+    body {
+        overflow-x: hidden;
+    }
+
+    #NavBar {
+        width: 100%;
+        left: 0;
+    }
+
+    .Name h1 {
+        font-size: 3em;
+    }
+    
+    .Name p {
+        font-size: 1em;
+        width: 70%;
+    }
+
+    .row {
+        flex-wrap: wrap;
+    }
+
+    .column {
+        flex: 45%;
+        max-width: 50%;
+    }
+
+    #ComGrid {
+        grid-template-columns: 40% 40%;
+        grid-gap: 20px;
+    }
+
+    #embeds {
+        display: none;
+    }
+
+    #SmallEmbeds {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #AusClock {
+       display: none;
+    }
+
+    #AusClock-small {
+        display: block;
+        margin: 0;
+    }
+
+    #PartSix {
+        height: auto;
+        padding-bottom: 100px;
+    }
+
+    .close {
+        right: 16px;
+        top: 16px;
+    }
+
+    #ModalIMG {
+        width: 100%;
+        height: 40vh;
+    }
+
+    #ModalBox {
+        width: 100%;
+        height: 47vh;
+    }
+
+    #ModalName {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    
+    #ModalDesc {
+        width: 550px;
+        margin-top: 10px;
+    }
+
+    #ModalBuy {
+        width: 40%;
+    }
+
+    #ModalPrice {
+        right: initial;
+        top: initial;
+        bottom: 0;
+        left: 0;
+    }
+
+    #ModalContent {
+        width: 90%;
+    }
+
+    .comItem, .comItem img {
+        width: 100%;
+    }
+
+    #PartSix .paddedBox {
+        grid-template-columns: 18% 18% 18% 18% 18%;
+    }
+}
