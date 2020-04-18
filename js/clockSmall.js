@@ -3,20 +3,23 @@ const ctx2 = canvas2.getContext('2d');
 canvas2.width = window.innerWidth;
 canvas2.height = 100;
 
+function SGetTime(offset) {
+    let d = new Date();
+    let utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+    let nd = new Date(utc + (3600000*offset));
+    return nd;
+}
+
 
 function main2() {
     ctx2.clearRect(0, 0, canvas2.width, canvas2.height);
-    let Sd  = new Date();
 
-    let Sb = new Date();
-    let Sutc = Sb.getUTCDate();
-    let Snd = new Date(Sutc + (3600000*10));
-    let Sn = Snd.getUTCHours();
+    let Sb = SGetTime("+10");
 
-    let Ssc = Sd.getSeconds();
-    let Smn = Sd.getMinutes();
-    let Shr = Sn;//d.getHours();
-    let Sms = Sd.getMilliseconds();
+    let Ssc = Sb.getSeconds();
+    let Smn = Sb.getMinutes();
+    let Shr = Sb.getHours();
+    let Sms = Sb.getMilliseconds();
 
     function DoubleDigit(num) {
         if (num < 10) {
@@ -30,7 +33,7 @@ function main2() {
         else return "PM";
     }
 
-    function Shours12() { return (Sn + 24) % 12 || 0 ; }
+    function Shours12() { return (Shr + 24) % 12 || 0 ; }
     let Shr12 = Shours12();
 
     ctx2.beginPath();

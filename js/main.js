@@ -42,7 +42,7 @@ itemList.push(new comItem(
 ));
 itemList.push(new comItem(
     "Forum Chibi",
-    "These cure lil' guys are done in full color, in a chibi anime style.\nThey're a smaller resolution by default though.",
+    "These cute lil' guys are done in full color, in a chibi anime style.\nThey're a smaller resolution by default though.",
     // "These are done in full color. Anime style chibi. (Small resolution by default)",
     "$10",
     new Image().src = "img/Commissions/Forum_Chibi.png"

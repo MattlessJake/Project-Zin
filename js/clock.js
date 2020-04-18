@@ -3,22 +3,25 @@ const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
+function GetTime(offset) {
+    let d = new Date();
+    let utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+    let nd = new Date(utc + (3600000*offset));
+    return nd;
+}
+
 
 function main() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    let d  = new Date();
 
-    let b = new Date();
-    let utc = b.getUTCDate();
-    let nd = new Date(utc + (3600000*11));
-    let n = nd.getUTCHours();
+    let b = GetTime("+10");
 
-    let sc = d.getSeconds();
-    let mn = d.getMinutes();
-    let hr = n;//d.getHours();
-    let ms = d.getMilliseconds();
+    let sc = b.getSeconds();
+    let mn = b.getMinutes();
+    let hr = b.getHours();
+    let ms = b.getMilliseconds();
 
-    function hours12() { return (n + 24) % 12 || 0 ; }
+    function hours12() { return (hr + 24) % 12 || 0 ; }
     let hr12 = hours12();
 
 
