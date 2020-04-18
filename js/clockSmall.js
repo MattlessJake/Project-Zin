@@ -9,8 +9,8 @@ function main2() {
     let Sd  = new Date();
 
     let Sb = new Date();
-    let Sutc = Sb.getTime() + (Sb.getTimezoneOffset() * 60000);
-    let Snd = new Date(Sutc + (3600000*11));
+    let Sutc = Sb.getUTCDate();
+    let Snd = new Date(Sutc + (3600000*10));
     let Sn = Snd.getUTCHours();
 
     let Ssc = Sd.getSeconds();
@@ -26,7 +26,7 @@ function main2() {
     }
 
     function IsAM(time) {
-        if (time < 12) return "AM";
+        if (time > 12) return "AM";
         else return "PM";
     }
 

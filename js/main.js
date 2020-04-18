@@ -36,37 +36,41 @@ function GetList() {
 // Make Commission Items here:
 itemList.push(new comItem(
     "Face Sketch",
-    "These sketches are done in black in white, with details.",
+    "You can get a sketch done of your face! Or a friends face! Or even a characters face!\nThese sketches are done in black in white, with details.",
     "$10",
     new Image().src = "img/Commissions/Face_Sketch.png"
 ));
 itemList.push(new comItem(
     "Forum Chibi",
-    "These are done in full colour. Anime style chibi. (Small resolution by default)",
+    "These cure lil' guys are done in full color, in a chibi anime style.\nThey're a smaller resolution by default though.",
+    // "These are done in full color. Anime style chibi. (Small resolution by default)",
     "$10",
     new Image().src = "img/Commissions/Forum_Chibi.png"
 ));
 itemList.push(new comItem(
     "Murder Noodle",
-    "$15 for black & white, full body cartoon style.\n$20 for colour with cell shading.",
+    "These noodles are full body, cute cartoon style drawings.\n$15 for black and white coloring.\n$20 for full color with cell shading.",
+    // "$15 for black & white, full body cartoon style.\n$20 for color with cell shading.",
     "$15-$20",
     new Image().src = "img/Commissions/Murder_Noodle.png"
 ));
 itemList.push(new comItem(
     "Pinup Style",
-    "$30 for a more realistic drawing than with the Noodle. Full body, black and white.\n+$25 for cel shading colour. (Total: $55)\n+$40 for a digital painting. (Total: $70)",
+    "These are a bit more realistic style than the Noodles, with more detail.\n$30 for black and white coloring.\n+$25 for added cel shaded color. (Total $55)\n+$40 for a complete digital painting. (Total $70)",
+    // "$30 for a more realistic drawing than with the Noodle. Full body, black and white.\n+$25 for cel shading color. (Total: $55)\n+$40 for a digital painting. (Total: $70)",
     "$30-$70",
     new Image().src = "img/Commissions/Pinup_Style.png"
 ));
 itemList.push(new comItem(
     "Cat Chibi",
-    "Yea, you can have your character as a wierd cat, what of it?",
+    "Yea, you can have your character as a wierd cat, what of it? It's cool as heck!",
     "$5",
     new Image().src = "img/Commissions/Cat_Chibi.png"
 ));
 itemList.push(new comItem(
     "LIMITED EDITION<br />Gatcha Chibi",
-    "A Chibi, slightly lower detail but trapped inside a gatcha ball.\nThese are limited edition though, so if you want one, don't miss out!",
+    "These Chibis are slightly lower detail than the Forum Chibis, they have the added bonus of being trapped in a gatcha ball though.\nThese are limited edition though! So if you want one, don't miss out!",
+    // "A Chibi, slightly lower detail but trapped inside a gatcha ball.\nThese are limited edition though, so if you want one, don't miss out!",
     "$10",
     new Image().src = "img/Commissions/Gatcha_Chibi.png"
 ));

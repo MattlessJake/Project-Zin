@@ -9,7 +9,7 @@ function main() {
     let d  = new Date();
 
     let b = new Date();
-    let utc = b.getTime() + (b.getTimezoneOffset() * 60000);
+    let utc = b.getUTCDate();
     let nd = new Date(utc + (3600000*11));
     let n = nd.getUTCHours();
 

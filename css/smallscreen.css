@@ -74,14 +74,14 @@
 
     #ModalIMG {
         height: 200px;
-        width: 350px;
+        width: 320px;
         object-fit: contain;
         background: rgba(0, 0, 0, 1);
         border-radius: 10px 10px 0 0;
     }
 
     #ModalBox {
-        width: 350px;
+        width: 320px;
         height: 300px;
     }
 
