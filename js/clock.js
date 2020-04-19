@@ -36,9 +36,7 @@ function main() {
     ctx.font = "40px Lucida Console";
     //ctx.font = "40px Apercu Mono";
     ctx.textAlign = 'center';
-    if (hr < 12) {
-        ctx.fillText("AM", canvas.width/2, canvas.height/2);
-    }
+    if (hr < 12) ctx.fillText("AM", canvas.width/2, canvas.height/2);
     else ctx.fillText("PM", canvas.width/2, canvas.height/2);
     ctx.closePath();
 
