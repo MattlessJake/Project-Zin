@@ -95,7 +95,7 @@ window.onscroll = function() {
         }
     }
 
-    if (document.documentElement.scrollTop >= document.getElementById('PartSix').offsetTop-80) {
+    if (document.documentElement.scrollTop >= document.getElementById('CheckMeOut').offsetTop-80) {
         document.getElementById('Lbd').classList.remove('active');
         document.getElementById('SecondLink').classList.remove('active');
         // document.getElementById('ThirdLink').classList.remove('active');
@@ -103,7 +103,7 @@ window.onscroll = function() {
         document.getElementById('FithLink').classList.remove('active');
         document.getElementById('Rbd').classList.add('active');
     }
-    else if (document.documentElement.scrollTop >= document.getElementById('PartFive').offsetTop-80) {
+    else if (document.documentElement.scrollTop >= document.getElementById('UsefulThings').offsetTop-80) {
         document.getElementById('Lbd').classList.remove('active');
         document.getElementById('SecondLink').classList.remove('active');
         // document.getElementById('ThirdLink').classList.remove('active');
@@ -111,7 +111,7 @@ window.onscroll = function() {
         document.getElementById('FithLink').classList.add('active');
         document.getElementById('Rbd').classList.remove('active');
     }
-    else if(document.documentElement.scrollTop >= document.getElementById('PartFour').offsetTop-80) {
+    else if(document.documentElement.scrollTop >= document.getElementById('Commissions').offsetTop-80) {
         document.getElementById('Lbd').classList.remove('active');
         document.getElementById('SecondLink').classList.remove('active');
         // document.getElementById('ThirdLink').classList.remove('active');
@@ -127,7 +127,7 @@ window.onscroll = function() {
     //     document.getElementById('FithLink').classList.remove('active');
     //     document.getElementById('Rbd').classList.remove('active');
     // }
-    else if(document.documentElement.scrollTop >= document.getElementById('PartTwo').offsetTop-80) {
+    else if(document.documentElement.scrollTop >= document.getElementById('Things').offsetTop-80) {
         document.getElementById('Lbd').classList.remove('active');
         document.getElementById('SecondLink').classList.add('active');
         // document.getElementById('ThirdLink').classList.remove('active');
