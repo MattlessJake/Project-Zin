@@ -67,7 +67,7 @@ app.post('/getPost', urlencodedParser, function(req, res) {
     }
 })
 
-let PORT = process.nextTick.PORT || 8000;
+let PORT = process.env.PORT || 8000;
 let server = app.listen(PORT, function() {
     console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 })
