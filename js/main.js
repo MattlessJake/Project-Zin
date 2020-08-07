@@ -3,6 +3,9 @@ let scrollBox = document.getElementById('scrollBox')
 let originalWidth = navbar.style.width;
 let originalLeft = navbar.style.left;
 
+window.addEventListener('load', function() {
+    getPosts();
+})
 
 let itemList = [];
 
@@ -239,26 +242,41 @@ function CloseModal() {
 //     });
 // }
 
-$.ajax({
-    type: 'GET',
-    url: '../public/BlogPosts/',
-    success: function(data) {
-        $(data).find("a:contains(.txt)").each(function(){
-            // will loop through 
-            var images = $(this).attr("href");
+// // $.ajax({
+// //     type: 'GET',
+// //     url: '../public/blogposts/',
+// //     success: function(data) {
+// //         $(data).find("a:contains(.txt)").each(function(){
+// //             // will loop through 
+// //             var images = $(this).attr("href");
 
-            //blogList.push(images)
-            GetFile(images);
-        });
+// //             //blogList.push(images)
+// //             GetFile(images);
+// //         });
+// //     }
+// // })
+
+function getPosts() {
+    let txtFile = new XMLHttpRequest();
+    txtFile.open("GET", "../blogfile.txt", true);
+    txtFile.onreadystatechange = function() {
+        if (txtFile.readyState === 4) {
+            if (txtFile.status === 200 || txtFile.status == 0) {
+                let allText = txtFile.responseText;
+                let lines = txtFile.responseText.split("\n")
+                lines.forEach(GetFile);
+            }
+        }
     }
-})
+    txtFile.send(null);
+}
 
 // getPosts();
 //GetFile('08-05-2020.txt')
 
 function GetFile(fileName) {
     let txtFile = new XMLHttpRequest();
-    txtFile.open("GET", "../public/BlogPosts/" + fileName, true);
+    txtFile.open("GET", "../public/blogposts/" + fileName, true);
     txtFile.onreadystatechange = function() {
         if (txtFile.readyState === 4) {
             if (txtFile.status === 200 || txtFile.status == 0) {
