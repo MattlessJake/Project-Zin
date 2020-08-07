@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Ubuntu&display=swap');
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+:root {
+    --backgroundA: #46e6cb;
+    --backgroundB: #40cab3;
+    --textA: #353535;
+    --textB: #dfdfdf;
+    --fontA: 'Montserrat', sans-serif;
+    --fontB: 'Ubuntu', sans-serif;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    background-image: url('../img/Background/Part2.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#container {
+    display: flex;
+    margin: 10vh 20%;
+    height: 80vh;
+    width: 60%;
+    border-radius: 100px;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 50px;
+}
+
+form input, form textarea {
+    background: rgba(0, 0, 0, 0.3);
+    color: #fdfdfd;
+    font-size: 1.3em;
+    padding: 20px;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    transition-duration: 0.3s;
+}
+
+form input:hover, form textarea:hover, #split div:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+form input:focus, form textarea:focus {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+#split input:focus {
+    border-bottom: 4px solid rgba(0, 0, 0, 0.5);
+}
+
+form #split {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+form #split input {
+    flex: 0 1 50%;
+    border-radius: 0;
+    padding: 20px 30px 30px 30px;
+    /* margin: 0 30px; */
+    /* border-radius: 50px; */
+}
+
+#split div {
+    transition-duration: 0.3s;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 45%;
+    /* margin: 0 10px; */
+    background: rgba(0, 0, 0, 0.3);
+    /* border-radius: 50px 50px 0 0; */
+    color: #fdfdfd;
+    padding: 0;
+    font-size: 1.1em;
+}
+
+#split input {
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0;
+    line-height: 100%;
+}
+
+form label {
+    flex: 0 1 50%;
+    width: 100%;
+    padding: 20px 30px 0 30px;
+}
+
+form textarea {
+    margin: auto;
+    padding: 40px 50px;
+    color: #fdfdfd;
+    outline: none;
+    border: none;
+    resize: none;
+    width: 90.5%;
+    flex: 1 1 90%;
+    border-radius: 0 0 50px 50px;
+    font-size: 1.1em;
+    margin: 20px auto 40px auto;
+}

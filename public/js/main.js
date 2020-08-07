@@ -3,6 +3,8 @@ let scrollBox = document.getElementById('scrollBox')
 let originalWidth = navbar.style.width;
 let originalLeft = navbar.style.left;
 
+let blogPost = document.getElementById('blogPost');
+
 let itemList = [];
 
 function isMobileDevice() {
@@ -98,7 +100,7 @@ window.onscroll = function() {
     if (document.documentElement.scrollTop >= document.getElementById('CheckMeOut').offsetTop-80) {
         document.getElementById('Lbd').classList.remove('active');
         document.getElementById('SecondLink').classList.remove('active');
-        // document.getElementById('ThirdLink').classList.remove('active');
+        document.getElementById('ThirdLink').classList.remove('active');
         document.getElementById('FourthLink').classList.remove('active');
         document.getElementById('FithLink').classList.remove('active');
         document.getElementById('Rbd').classList.add('active');
@@ -106,7 +108,7 @@ window.onscroll = function() {
     else if (document.documentElement.scrollTop >= document.getElementById('UsefulThings').offsetTop-80) {
         document.getElementById('Lbd').classList.remove('active');
         document.getElementById('SecondLink').classList.remove('active');
-        // document.getElementById('ThirdLink').classList.remove('active');
+        document.getElementById('ThirdLink').classList.remove('active');
         document.getElementById('FourthLink').classList.remove('active');
         document.getElementById('FithLink').classList.add('active');
         document.getElementById('Rbd').classList.remove('active');
@@ -114,23 +116,23 @@ window.onscroll = function() {
     else if(document.documentElement.scrollTop >= document.getElementById('Commissions').offsetTop-80) {
         document.getElementById('Lbd').classList.remove('active');
         document.getElementById('SecondLink').classList.remove('active');
-        // document.getElementById('ThirdLink').classList.remove('active');
+        document.getElementById('ThirdLink').classList.remove('active');
         document.getElementById('FourthLink').classList.add('active');
         document.getElementById('FithLink').classList.remove('active');
         document.getElementById('Rbd').classList.remove('active');
     }
-    // else if(document.documentElement.scrollTop >= document.getElementById('PartThree').offsetTop-80) {
-    //     document.getElementById('Lbd').classList.remove('active');
-    //     document.getElementById('SecondLink').classList.remove('active');
-    //     document.getElementById('ThirdLink').classList.add('active');
-    //     document.getElementById('FourthLink').classList.remove('active');
-    //     document.getElementById('FithLink').classList.remove('active');
-    //     document.getElementById('Rbd').classList.remove('active');
-    // }
+    else if(document.documentElement.scrollTop >= document.getElementById('Blog').offsetTop-80) {
+        document.getElementById('Lbd').classList.remove('active');
+        document.getElementById('SecondLink').classList.remove('active');
+        document.getElementById('ThirdLink').classList.add('active');
+        document.getElementById('FourthLink').classList.remove('active');
+        document.getElementById('FithLink').classList.remove('active');
+        document.getElementById('Rbd').classList.remove('active');
+    }
     else if(document.documentElement.scrollTop >= document.getElementById('Things').offsetTop-80) {
         document.getElementById('Lbd').classList.remove('active');
         document.getElementById('SecondLink').classList.add('active');
-        // document.getElementById('ThirdLink').classList.remove('active');
+        document.getElementById('ThirdLink').classList.remove('active');
         document.getElementById('FourthLink').classList.remove('active');
         document.getElementById('FithLink').classList.remove('active');
         document.getElementById('Rbd').classList.remove('active');
@@ -138,7 +140,7 @@ window.onscroll = function() {
     else {
         document.getElementById('Lbd').classList.add('active');        
         document.getElementById('SecondLink').classList.remove('active');
-        // document.getElementById('ThirdLink').classList.remove('active');
+        document.getElementById('ThirdLink').classList.remove('active');
         document.getElementById('FourthLink').classList.remove('active');
         document.getElementById('FithLink').classList.remove('active');
         document.getElementById('Rbd').classList.remove('active');
@@ -198,10 +200,77 @@ function CloseModal() {
     Modal.style.display = "none";
 }
 
-//Blog Things
+getPost(0);
+
+function nextPost() {
+    blogPost.classList.add('slideRight');
+    
+    setTimeout(function() {
+        getPost(1)
+        blogPost.classList.remove('slideRight');
+        blogPost.classList.add('slideRight2');
+        setTimeout(function() {
+            blogPost.classList.remove('slideRight2');
+        }, 300)
+    }, 300)
+}
+
+function prevPost() {
+    blogPost.classList.add('slideLeft');
+    
+    setTimeout(function() {
+        getPost(-1)
+        blogPost.classList.remove('slideLeft');
+        blogPost.classList.add('slideLeft2');
+        setTimeout(function() {
+            blogPost.classList.remove('slideLeft2');
+        }, 300)
+    }, 300)
+}
+
+function getPost(increment) {
+    $.ajax({
+        type: 'POST',
+        url: '/getPost',
+        dataType: 'json',
+        data: {increment: increment},
+        success: function(data) {
+            GetFile(data.fileName);
+        }
+    });
+}
+
+function GetFile(fileName) {
+    let txtFile = new XMLHttpRequest();
+    txtFile.open("GET", "/BlogPosts/" + fileName, true);
+    txtFile.onreadystatechange = function() {
+        if (txtFile.readyState === 4) {
+            if (txtFile.status === 200 || txtFile.status == 0) {
+                let allText = txtFile.responseText;
+                let lines = txtFile.responseText.split("\n")
+                makePost(fileName, lines); //Adds html elements & stuff
+            }
+        }
+    }
+    txtFile.send(null);
+}
+
+function makePost(fileName, text) {
+    let blogName = document.getElementById('blogName');
+    let blogDate = document.getElementById('blogDate');
+    let theContent = document.getElementById('blogContent');
+    for (i = 0; i < text.length; i++) {
+        if (i == 0) blogName.innerHTML = text[i];
+        else if (i == 1) blogDate.innerHTML = text[i];
+        else if (i == 2) theContent.innerHTML = text[i] + "<br />";
+        else theContent.innerHTML += text[i] + "<br />";
+    }
+}
+
+// //Blog Things
 // let blogContainer = document.getElementById('BlogContainer');
 
-// blogContainer.addEventListener("wheel", function() {
+// blogContainer.addEventListener("wheel", function(event) {
 //     event.preventDefault();
 //     blogContainer.scrollLeft += event.deltaY;
 // });

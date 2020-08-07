@@ -8,14 +8,14 @@
         <link rel="stylesheet" href="css/main.css" />
         <link rel="stylesheet" media="screen and (max-width: 1100px)" href="css/midscreen.css" />
         <link rel="stylesheet" media="screen and (max-width: 450px)" href="css/smallscreen.css" />
-        <link rel='Icon' href='img/icon.png'/>
+        <link rel='icon' href='img/icon.png'/>
     </head>
     <body>
-        <div id='Welcome'>   
+        <div id='Welcome'>
             <div id='NavBar'>
                 <a href='#Welcome' id='Lbd' class='active'>Welcome!</a>
                 <a href='#Things' id='SecondLink'>Things I've Done</a>
-                <!-- <a href='#PartThree' id='ThirdLink'>Blog</a> -->
+                <a href='#Blog' id='ThirdLink'>Blog</a>
                 <a href='#Commissions' id='FourthLink'>Commissions</a>
                 <a href='#UsefulThings' id='FithLink'>Useful Things</a>
                 <a href='#CheckMeOut' id='Rbd'>My Other Places</a>
@@ -32,7 +32,7 @@
                 <p>Hey there! I am Zin, one of those weird Australian critters!
                     I do a bunch of art things, as well as some handicraft things and game things.<br />
                     I livestream on twitch sometimes, mostly streaming digital art, although sometimes you can catch me doing handicraft things (like cross-stitching or patchwork), I might also be playing a game!<br />
-                    I've gotten in to the habit of streaming on a Sunday morning. So if you wanna check out what I'm up to, or just chill out with some art then you can join me over <a href='#PartFive' style='color: #dfdfdf'>there</a>!<br />
+                    I've gotten in to the habit of streaming on a Sunday morning. So if you wanna check out what I'm up to, or just chill out with some art then you can join me over <a href='#UsefulThings' style='color: #dfdfdf'>there</a>!<br />
                     (If you wanna find out what time it is over where I am, you can check out over <a href='#Clocks' style='color: #dfdfdf;'>here</a>.)
                 </p>
             </div>
@@ -75,29 +75,27 @@
             </div>
         </div>
 
-        <!-- <div id='PartThree'>
+        <div id='Blog'>
             <div class='Name' style='padding: 50px 0 0 0'>
                 <h1>MY BLOG</h1>
                 <p>Sometimes I like to talk about what's going on in life, or just let you guys know about cool things I've found or been shown. I'll leave them here!</p>
             </div>
             <div id='BlogContainer'>
-                <div class='blogPost'>
-                    <div><p class='blogName'>Title Bar</p><p class='blogDate'>04/04/2020</p></div>
-                    <p class='content'> Nunc in erat ut purus venenatis porta. Vestibulum commodo ut erat maximus mattis. Maecenas vel justo sed nibh aliquam viverra ut vestibulum arcu. Etiam pulvinar malesuada nunc aliquam ornare. Fusce cursus tortor velit, ac aliquam elit congue auctor. Suspendisse diam ex, commodo ut augue lacinia, finibus egestas sapien. Suspendisse viverra ligula nulla, nec blandit quam egestas eu. Cras condimentum enim vel mauris lobortis, in molestie mi tristique. Suspendisse in tellus ut dui lacinia ultricies vitae non nunc. Praesent pulvinar mi aliquam, tempor erat id, elementum ante. Mauris iaculis vitae nulla a aliquam. Sed aliquet risus quis turpis commodo consequat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-                </div>             
+                <div id='buttonLeft'><button onclick="prevPost()">&#8678;</button></div>
+                <div id='blogPost'>
+                    <div><p id='blogName'>Title Bar</p><p id='blogDate'>04/04/2020</p></div>
+                    <p id='blogContent'> Nunc in erat ut purus venenatis porta. Vestibulum commodo ut erat maximus mattis. Maecenas vel justo sed nibh aliquam viverra ut vestibulum arcu. Etiam pulvinar malesuada nunc aliquam ornare. Fusce cursus tortor velit, ac aliquam elit congue auctor. Suspendisse diam ex, commodo ut augue lacinia, finibus egestas sapien. Suspendisse viverra ligula nulla, nec blandit quam egestas eu. Cras condimentum enim vel mauris lobortis, in molestie mi tristique. Suspendisse in tellus ut dui lacinia ultricies vitae non nunc. Praesent pulvinar mi aliquam, tempor erat id, elementum ante. Mauris iaculis vitae nulla a aliquam. Sed aliquet risus quis turpis commodo consequat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                </div>           
+                <div id='buttonRight'><button onclick="nextPost()">&#8680;</button></div>
             </div>
-        </div> -->
+        </div>
 
         <div id='Commissions'>
             <div class='Name' style='padding: 50px 0 0 0'>
                 <h1>GET MY THINGS</h1>
-                <!-- <p>I make a bunch of things! This is a place where you can check out my things, if you want!
-                    <br />If you <i>do</i> want to commission anything, please contact me directly, please.<br />
-                    Click on an image to get a little more information about it.    
-                </p> -->
                 <p>
                     I make a bunch of different things! Here you can check out some of my things if you want!<br />
-                    Sadly you can't buy straight from this site but if you want you get anything from me then there's a bunch of ways to <a href='#PartSix' style='color: #dfdfdf'>get in touch</a>.<br />
+                    Sadly you can't buy straight from this site but if you want you get anything from me then there's a bunch of ways to <a href='#CheckMeOut' style='color: #dfdfdf'>get in touch</a>.<br />
                     If you want to give the image a closer look, give it a click. It also gives different options and a bit of a description. (The prices are all in USD$)
                 </p>
             </div>
@@ -118,7 +116,7 @@
                 <h1>USEFUL THINGS</h1>
                 <!-- <p id='Clocks'>Here are a bunch of useful things, meaning you can check out if I'm streaming or not right from this site! There's also a twitter page so you can check out what I've been up to. (Also a clock to help you non eastern Australian peeps out.)<br /><strong>Note: This currently only works on desktop. For you mobile guys, check below!</strong></p> -->
                 <p id='Clocks'>Down here there's a bunch of useful things. You can check out out if I'm streaming right now from this site! You can also check out what I've been up to on twitter! There's even a clock so you can check out what time it is for me over here in Australia land.<br />
-                    <strong>Note: This only works on desktop for now, sorry mobile guys... You can still check out my Twitter & Twitch <a href='#PartSix' style='color: #dfdfdf'>below</a> though!</strong>
+                    <strong>Note: This only works on desktop for now, sorry mobile guys... You can still check out my Twitter & Twitch <a href='#CheckMeOut' style='color: #dfdfdf'>below</a> though!</strong>
                 </p>
             </div>
             <div id='embeds'>
@@ -160,11 +158,11 @@
                 <a href='https://www.twitch.tv/zer0bandit' target="_blank"> <img class='exLink' src='img/Brand Logos/TwitchGlitchPurple.png' /></a>
                 <a href='mailto:contactzinthings@gmail.com' target="_blank"> <img class='exLink' src='img/Brand Logos/email_image.png' /></a>
             </div>
+            <div id='BottomBar'>
+                <p>This website was made by Hypermegasonic. I do web design (Also Zin is one of my friends)</p>
+            </div>
         </div>
 
-        <div id='BottomBar'>
-            <p>This website was made by Hypermegasonic. I do web design (Also Zin is one of my friends)</p>
-        </div>
 
         <div id='Modal'>
             <p id='ModalClose' onclick="CloseModal()" class='close'></p>
@@ -179,9 +177,8 @@
             </div>
         </div>
 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
         <script src="js/main.js"></script>
-        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
-        <!-- <script src='js/blog.js'></script> -->
         <script src="https://embed.twitch.tv/embed/v1.js"></script>
         <script type="text/javascript">
             let embed = new Twitch.Embed("twitch-embed", {
