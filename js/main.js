@@ -3,7 +3,6 @@ let scrollBox = document.getElementById('scrollBox')
 let originalWidth = navbar.style.width;
 let originalLeft = navbar.style.left;
 
-let blogPost = document.getElementById('blogPost');
 
 let itemList = [];
 
@@ -200,49 +199,66 @@ function CloseModal() {
     Modal.style.display = "none";
 }
 
-getPost(0);
+//getPost(0);
 
-function nextPost() {
-    blogPost.classList.add('slideRight');
+// function nextPost() {
+//     blogPost.classList.add('slideRight');
     
-    setTimeout(function() {
-        getPost(1)
-        blogPost.classList.remove('slideRight');
-        blogPost.classList.add('slideRight2');
-        setTimeout(function() {
-            blogPost.classList.remove('slideRight2');
-        }, 300)
-    }, 300)
-}
+//     setTimeout(function() {
+//         getPost(1)
+//         blogPost.classList.remove('slideRight');
+//         blogPost.classList.add('slideRight2');
+//         setTimeout(function() {
+//             blogPost.classList.remove('slideRight2');
+//         }, 300)
+//     }, 300)
+// }
 
-function prevPost() {
-    blogPost.classList.add('slideLeft');
+// function prevPost() {
+//     blogPost.classList.add('slideLeft');
     
-    setTimeout(function() {
-        getPost(-1)
-        blogPost.classList.remove('slideLeft');
-        blogPost.classList.add('slideLeft2');
-        setTimeout(function() {
-            blogPost.classList.remove('slideLeft2');
-        }, 300)
-    }, 300)
-}
+//     setTimeout(function() {
+//         getPost(-1)
+//         blogPost.classList.remove('slideLeft');
+//         blogPost.classList.add('slideLeft2');
+//         setTimeout(function() {
+//             blogPost.classList.remove('slideLeft2');
+//         }, 300)
+//     }, 300)
+// }
 
-function getPost(increment) {
-    $.ajax({
-        type: 'POST',
-        url: '/getPost',
-        dataType: 'json',
-        data: {increment: increment},
-        success: function(data) {
-            GetFile(data.fileName);
-        }
-    });
-}
+// function getPost(increment) {
+//     $.ajax({
+//         type: 'POST',
+//         url: '/getPost',
+//         dataType: 'json',
+//         data: {increment: increment},
+//         success: function(data) {
+//             GetFile(data.fileName);
+//         }
+//     });
+// }
+
+$.ajax({
+    type: 'GET',
+    url: '../BlogPosts/',
+    success: function(data) {
+        $(data).find("a:contains(.txt)").each(function(){
+            // will loop through 
+            var images = $(this).attr("href");
+
+            //blogList.push(images)
+            GetFile(images);
+        });
+    }
+})
+
+// getPosts();
+//GetFile('08-05-2020.txt')
 
 function GetFile(fileName) {
     let txtFile = new XMLHttpRequest();
-    txtFile.open("GET", "/BlogPosts/" + fileName, true);
+    txtFile.open("GET", "../BlogPosts/" + fileName, true);
     txtFile.onreadystatechange = function() {
         if (txtFile.readyState === 4) {
             if (txtFile.status === 200 || txtFile.status == 0) {
@@ -256,15 +272,32 @@ function GetFile(fileName) {
 }
 
 function makePost(fileName, text) {
-    let blogName = document.getElementById('blogName');
-    let blogDate = document.getElementById('blogDate');
-    let theContent = document.getElementById('blogContent');
+    let post = document.createElement('DIV');
+
+    let topBar = document.createElement('DIV');
+    let name = document.createElement('P');
+    let date = document.createElement('P');
+
+    let content = document.createElement('P');
+
     for (i = 0; i < text.length; i++) {
-        if (i == 0) blogName.innerHTML = text[i];
-        else if (i == 1) blogDate.innerHTML = text[i];
-        else if (i == 2) theContent.innerHTML = text[i] + "<br />";
-        else theContent.innerHTML += text[i] + "<br />";
+        if (i == 0) name.innerHTML = text[i];
+        else if (i == 1) date.innerHTML = text[i];
+        else if (i == 2) content.innerHTML = text[i] + "<br />";
+        else content.innerHTML += text[i] + "<br />";
     }
+    name.classList.add('blogName');
+    date.classList.add('blogDate');
+    content.classList.add('blogContent');
+
+    topBar.appendChild(name);
+    topBar.appendChild(date);
+
+    post.classList.add('blogPost');
+    post.appendChild(topBar);
+    post.appendChild(content);
+
+    document.getElementById('BlogContainer').appendChild(post);
 }
 
 // //Blog Things

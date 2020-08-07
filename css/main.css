@@ -42,8 +42,8 @@ body {
     border-radius: 0 0 50px 50px;
     z-index: 3;
     transition: 0.4s;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    /* backdrop-filter: blur(5px); */
+    /* -webkit-backdrop-filter: blur(5px); */
 }
 
 #NavBar a {
@@ -53,24 +53,24 @@ body {
     text-align: center;
     font-family: var(--fontA);
     font-size: 1.4em;
-    /* background-color: var(--backgroundA); */
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: var(--backgroundA);
+    /* background-color: rgba(0, 0, 0, 0.1); */
     /* padding: 15px 0; */
-    color: var(--backgroundA);
+    color: var(--textA);
     text-decoration: none;
     transition-duration: 0.3s;
     z-index: 2;
 }
 
 #NavBar a:hover {
-    background-color: rgba(0, 0, 0, 0.3);
-    /* background-color: var(--backgroundB); */
+    /* background-color: rgba(0, 0, 0, 0.3); */
+    background-color: var(--backgroundB);
 }
 
 #NavBar a.active {
     color: var(--backgroundB);
-    /* background-color: var(--textA); */
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: var(--textA);
+    /* background-color: rgba(0, 0, 0, 0.5); */
 }
 
 #Welcome {
@@ -257,8 +257,10 @@ body {
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     overflow: hidden;
-    /* scroll-behavior: auto; */
     margin: auto;
+    overflow-y: scroll;
+    scroll-behavior: auto;
+    transition-duration: 0.3s;
 }
 
 #buttonLeft, #buttonRight {
@@ -351,33 +353,33 @@ body {
     animation: slideInLeft 0.3s;
 }
 
-#blogPost {
+.blogPost {
     height: 70vh;
     flex: 0 0 40%;
     margin: auto;
     border-radius: 50px;
-    /* background: var(--backgroundA); */
-    background: rgba(0, 0, 0, 0.3);
-    color: #dfdfdf;
+    background: var(--backgroundA);
+    /* background: rgba(0, 0, 0, 0.3); */
+    /* color: #dfdfdf; */
 }
 
-#blogPost div {
+.blogPost div {
     width: 100%;
     margin: 0;
     height: 7vh;
-    /* background: var(--textA); */
-    /* color: var(--backgroundA); */
-    background: var(--backgroundA);
-    color: rgba(0, 0, 0, 0.7);
+    background: var(--textA);
+    color: var(--backgroundA);
+    /* background: var(--backgroundA);
+    color: rgba(0, 0, 0, 0.7); */
     border-radius: 40px 40px 0 0;
 }
 
-#blogContent {
+.blogContent {
     margin: 2em;
     font-size: 1.2em;
 }
 
-#blogName {
+.blogName {
     font-size: 1.4em;
     position: relative;
     left: 40px;
@@ -387,7 +389,7 @@ body {
     font-weight: bold
 }
 
-#blogDate {
+.blogDate {
     position: relative;
     font-size: 1.4em;
     top: -5px;

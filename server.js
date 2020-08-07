@@ -8,30 +8,37 @@ let theFiles;
 let app = express();
 app.use(express.static('public'));
 let urlencodedParser = bodyParser.urlencoded({ extended: true })
-app.get('/', function(req, res) {
-    res.setHeader('Content-Type', 'text/html');
 
-    fs.readdir(msgPath, 'utf-8', function(err, files) {
-        if(err) throw err;
-        theFiles = files;
-        blogIndex = files.length-1;
-    })
-    fs.readFile('./index.html', null, function(err, data) {
-        if(err) throw err;
-        else res.write(data);
-        res.end();
-    })
-})
+// fs.readdir(msgPath, 'utf-8', function(err, files) {
+//     if(err) throw err;
+//     theFiles = files;
+//     blogIndex = files.length-1;
+// })
 
-app.get('/blog', function(req, res) {
-    res.setHeader('Content-Type', 'text/html');
+// app.get('/', function(req, res) {
+//     res.setHeader('Content-Type', 'text/html');
+
+//     fs.readdir(msgPath, 'utf-8', function(err, files) {
+//         if(err) throw err;
+//         theFiles = files;
+//         blogIndex = files.length-1;
+//     })
+//     fs.readFile('./index.html', null, function(err, data) {
+//         if(err) throw err;
+//         else res.write(data);
+//         res.end();
+//     })
+// })
+
+// app.get('/blog', function(req, res) {
+//     res.setHeader('Content-Type', 'text/html');
     
-    fs.readFile('./blog.html', null, function(err, data) {
-        if(err) throw err;
-        else res.write(data);
-        res.end();
-    })
-})
+//     fs.readFile('./blog.html', null, function(err, data) {
+//         if(err) throw err;
+//         else res.write(data);
+//         res.end();
+//     })
+// })
 
 const msgPath = __dirname + '/public/BlogPosts'
 
@@ -48,26 +55,35 @@ app.post('/send', urlencodedParser, function(req, res) {
     res.redirect('/blog');
 })
 
-app.post('/getPost', urlencodedParser, function(req, res) {
-    let increment = req.body.increment;
-
-    res.setHeader('Content-Type', 'text/json');
-    if (increment == 1) {
-        if(blogIndex + 1 > theFiles.length-1) blogIndex = 0;
-        else blogIndex++;
-        res.end(JSON.stringify({'fileName': `${theFiles[blogIndex]}`}))
-    }
-    else if (increment == 0) {
-        res.end(JSON.stringify({'fileName': `${theFiles[blogIndex]}`}))
-    }
-    else if (increment == -1) {
-        if(blogIndex - 1 < 0) blogIndex = theFiles.length-1;
-        else blogIndex--;
-        res.end(JSON.stringify({'fileName': `${theFiles[blogIndex]}`}))
-    }
+app.get('/post', urlencodedParser, function(req, res) {
+    fs.readdir(msgPath, 'utf-8', function(err, files) {
+        if(err) throw err;
+        res.setHeader('Access-Control-Allow-Origin', '*')
+        res.send(files);
+        res.end();
+    })
 })
 
-let PORT = process.env.PORT || 8000;
+// app.post('/getPost', urlencodedParser, function(req, res) {
+//     let increment = req.body.increment;
+
+//     res.setHeader('Content-Type', 'text/json');
+//     if (increment == 1) {
+//         if(blogIndex + 1 > theFiles.length-1) blogIndex = 0;
+//         else blogIndex++;
+//         res.end(JSON.stringify({'fileName': `${theFiles[blogIndex]}`}))
+//     }
+//     else if (increment == 0) {
+//         res.end(JSON.stringify({'fileName': `${theFiles[blogIndex]}`}))
+//     }
+//     else if (increment == -1) {
+//         if(blogIndex - 1 < 0) blogIndex = theFiles.length-1;
+//         else blogIndex--;
+//         res.end(JSON.stringify({'fileName': `${theFiles[blogIndex]}`}))
+//     }
+// })
+
+let PORT = 8080;//process.env.PORT || 8080;
 let server = app.listen(PORT, function() {
     console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 })
