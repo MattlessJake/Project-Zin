@@ -100,7 +100,7 @@ Thumbs.db
 #ignore debug & custom files
 *.py
 *.php
-*.txt
+# *.txt
 
 # -------------------------
 # BEGIN Whitelisted Files

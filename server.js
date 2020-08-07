@@ -33,7 +33,7 @@ app.get('/blog', function(req, res) {
     })
 })
 
-const msgPath = __dirname + '/BlogPosts'
+const msgPath = __dirname + 'public/BlogPosts'
 
 app.post('/send', urlencodedParser, function(req, res) {
     let body = req.body;
