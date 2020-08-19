@@ -102,7 +102,7 @@ window.onscroll = function() {
     if (document.documentElement.scrollTop >= document.getElementById('CheckMeOut').offsetTop-80) {
         document.getElementById('Lbd').classList.remove('active');
         document.getElementById('SecondLink').classList.remove('active');
-        document.getElementById('ThirdLink').classList.remove('active');
+        // document.getElementById('ThirdLink').classList.remove('active');
         document.getElementById('FourthLink').classList.remove('active');
         document.getElementById('FithLink').classList.remove('active');
         document.getElementById('Rbd').classList.add('active');
@@ -110,7 +110,7 @@ window.onscroll = function() {
     else if (document.documentElement.scrollTop >= document.getElementById('UsefulThings').offsetTop-80) {
         document.getElementById('Lbd').classList.remove('active');
         document.getElementById('SecondLink').classList.remove('active');
-        document.getElementById('ThirdLink').classList.remove('active');
+        // document.getElementById('ThirdLink').classList.remove('active');
         document.getElementById('FourthLink').classList.remove('active');
         document.getElementById('FithLink').classList.add('active');
         document.getElementById('Rbd').classList.remove('active');
@@ -118,23 +118,23 @@ window.onscroll = function() {
     else if(document.documentElement.scrollTop >= document.getElementById('Commissions').offsetTop-80) {
         document.getElementById('Lbd').classList.remove('active');
         document.getElementById('SecondLink').classList.remove('active');
-        document.getElementById('ThirdLink').classList.remove('active');
+        // document.getElementById('ThirdLink').classList.remove('active');
         document.getElementById('FourthLink').classList.add('active');
         document.getElementById('FithLink').classList.remove('active');
         document.getElementById('Rbd').classList.remove('active');
     }
-    else if(document.documentElement.scrollTop >= document.getElementById('Blog').offsetTop-80) {
-        document.getElementById('Lbd').classList.remove('active');
-        document.getElementById('SecondLink').classList.remove('active');
-        document.getElementById('ThirdLink').classList.add('active');
-        document.getElementById('FourthLink').classList.remove('active');
-        document.getElementById('FithLink').classList.remove('active');
-        document.getElementById('Rbd').classList.remove('active');
-    }
+    // else if(document.documentElement.scrollTop >= document.getElementById('Blog').offsetTop-80) {
+    //     document.getElementById('Lbd').classList.remove('active');
+    //     document.getElementById('SecondLink').classList.remove('active');
+    //     document.getElementById('ThirdLink').classList.add('active');
+    //     document.getElementById('FourthLink').classList.remove('active');
+    //     document.getElementById('FithLink').classList.remove('active');
+    //     document.getElementById('Rbd').classList.remove('active');
+    // }
     else if(document.documentElement.scrollTop >= document.getElementById('Things').offsetTop-80) {
         document.getElementById('Lbd').classList.remove('active');
         document.getElementById('SecondLink').classList.add('active');
-        document.getElementById('ThirdLink').classList.remove('active');
+        // document.getElementById('ThirdLink').classList.remove('active');
         document.getElementById('FourthLink').classList.remove('active');
         document.getElementById('FithLink').classList.remove('active');
         document.getElementById('Rbd').classList.remove('active');
@@ -142,7 +142,7 @@ window.onscroll = function() {
     else {
         document.getElementById('Lbd').classList.add('active');        
         document.getElementById('SecondLink').classList.remove('active');
-        document.getElementById('ThirdLink').classList.remove('active');
+        // document.getElementById('ThirdLink').classList.remove('active');
         document.getElementById('FourthLink').classList.remove('active');
         document.getElementById('FithLink').classList.remove('active');
         document.getElementById('Rbd').classList.remove('active');
